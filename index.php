@@ -29,8 +29,18 @@
 			<form action="Controlador/CLogin.php" method="post">
 				<div class="login-form">
 					<div class="form-group">
-						<label for="username" class="placeholder"><b>Username</b></label>
+						<label for="username" class="placeholder"><b>Usuario</b></label>
 						<input id="username" name="username" type="text" class="form-control" required>
+					</div>
+					<div class="form-group">
+						<label for="password" class="placeholder"><b>Contraseña</b></label>
+						
+						<div class="position-relative">
+							<input id="password" name="password" type="password" class="form-control" required>
+							<div class="show-password">
+								<i class="flaticon-interface"></i>
+							</div>
+						</div>
 					</div>
 					<div class="form-group form-action-d-flex mb-3">
 					
@@ -47,7 +57,7 @@
 	<script src="/assets/js/core/popper.min.js"></script>
 	<script src="/assets/js/core/bootstrap.min.js"></script>
 	<script src="/assets/js/ready.js"></script>
-	<script src="js/app.js"></script>
+	<script src="js/main.js"></script>
 
 </body>
 </html>
