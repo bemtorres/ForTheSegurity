@@ -1,8 +1,8 @@
 <ul class="nav">
     <li class="nav-item active">
-        <a href="/">
+        <a href="home.php">
             <i class="fas fa-home"></i>
-            <p>Calendario</p>
+            <p>home</p>
             <span class="badge badge-count">5</span>
         </a>
     </li>
@@ -19,26 +19,21 @@
             <span class="caret"></span>
         </a>
         <div class="collapse" id="base1">
-            <ul class="nav nav-collapse">								
+            <ul class="nav nav-collapse">	
                 <li>
-                    <a href="/">
-                        <span class="sub-item">Clientes</span>
+                    <a href="instituciones.php">
+                        <span class="sub-item">Instituciones</span>
                     </a>
-                </li>
+                </li>							
                 <li>
-                    <a href="">
-                        <span class="sub-item">Calendario</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="/">
-                        <span class="sub-item">Historial</span>
+                    <a href="personas.php">
+                        <span class="sub-item">Personas</span>
                     </a>
                 </li>
             </ul>
         </div>
     </li>
-    <li class="nav-item">
+    <!-- <li class="nav-item">
         <a data-toggle="collapse" href="#base">
             <i class="fas fa-users"></i>
             <p>Usuarios</p>
@@ -105,7 +100,7 @@
                 </li>
             </ul>
         </div>
-    </li>
+    </li> -->
     <li class="nav-item">
         <a data-toggle="collapse" href="#config">
             <i class="fa fa-cog"></i>
@@ -115,18 +110,29 @@
         <div class="collapse" id="config">
             <ul class="nav nav-collapse">
                 <li>
-                    <a href="">
-                        <span class="sub-item">Control Correo</span>
+                    <a href="preguntas.php">
+                        <span class="sub-item">Preguntas</span>
                     </a>
                 </li>
                 <li>
-                    <a href="">
-                        <span class="sub-item">Perfil</span>
+                    <a href="orientaciones.php">
+                        <span class="sub-item">Areas</span>
                     </a>
                 </li>
+            </ul>
+        </div>
+    </li>
+    <li class="nav-item">
+        <a data-toggle="collapse" href="#config1">
+            <i class="fa fa-cog"></i>
+            <p>Sistema</p>
+            <span class="caret"></span>
+        </a>
+        <div class="collapse" id="config1">
+            <ul class="nav nav-collapse">
                 <li>
                     <a href="">
-                        <span class="sub-item">Cambiar Contraseña</span>
+                        <span class="sub-item">Correo</span>
                     </a>
                 </li>
             </ul>

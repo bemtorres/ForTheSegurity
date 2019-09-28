@@ -28,6 +28,24 @@ class UsuarioDAO {
 		$nuevo = new Usuario($ba['id_usuario'],$ba['username'],$ba['password'],$ba['correo'],$ba['fecha_create'],$ba['nombre'],$ba['activo']);
 		return $nuevo; 
 	}
+	public static function buscarCorreo($correo) {
+		$cc=DB::getInstancia();
+		$stSql = "SELECT * FROM usuario WHERE correo=:correo";
+		$rs = $cc->db->prepare($stSql);
+		$rs->execute(array('correo' => $correo));
+		$ba = $rs->fetch();
+		$nuevo = new Usuario($ba['id_usuario'],$ba['username'],$ba['password'],$ba['correo'],$ba['fecha_create'],$ba['nombre'],$ba['activo']);
+		return $nuevo; 
+	}
+	public static function buscarUsuario($username) {
+		$cc=DB::getInstancia();
+		$stSql = "SELECT * FROM usuario WHERE username=:username";
+		$rs = $cc->db->prepare($stSql);
+		$rs->execute(array('username' => $username));
+		$ba = $rs->fetch();
+		$nuevo = new Usuario($ba['id_usuario'],$ba['username'],$ba['password'],$ba['correo'],$ba['fecha_create'],$ba['nombre'],$ba['activo']);
+		return $nuevo; 
+	}
 	public static function actualizar($nuevo) {
 		$cc=DB::getInstancia();
 		$stSql = "UPDATE usuario SET username=:username,password=:password,correo=:correo,fecha_create=:fecha_create,nombre=:nombre,activo=:activo WHERE id_usuario=:id_usuario";

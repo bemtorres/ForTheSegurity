@@ -86,7 +86,7 @@ CREATE TABLE usuario
     id_usuario   INT NOT NULL ,
     username     VARCHAR (30) NOT NULL ,
     password     VARCHAR (64) NOT NULL ,
-    correo       VARCHAR (100) NOT NULL ,
+    correo       VARCHAR (100) NOT NULL unique ,
     fecha_create DATETIME NOT NULL ,
     nombre       VARCHAR (100) NOT NULL ,
     activo       INT NOT NULL
@@ -113,3 +113,9 @@ ALTER TABLE detalle_preg_orien CHANGE COLUMN `id_detalle_pre_o` `id_detalle_pre_
 ALTER TABLE orientacion CHANGE COLUMN `id_orientacion` `id_orientacion` INT(11) NOT NULL AUTO_INCREMENT ;
 ALTER TABLE persona CHANGE COLUMN `id_persona` `id_persona` INT(11) NOT NULL AUTO_INCREMENT ;
 ALTER TABLE pregunta CHANGE COLUMN `id_pregunta` `id_pregunta` INT(11) NOT NULL AUTO_INCREMENT ;
+ALTER TABLE institucion CHANGE COLUMN `id_institucion` `id_institucion` INT(11) NOT NULL AUTO_INCREMENT ;
+
+
+
+
+5994471abb01112afcc18159f6cc74b4f511b99806da59b3caf5a9c173cacfc5

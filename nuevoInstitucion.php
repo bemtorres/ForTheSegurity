@@ -20,15 +20,19 @@
 								<div class="card-header">
 									<div class="card-title">Fomulario Nueva institución</div>
 								</div>
-								<form action="Controlador/Cpregunta.php" method="post">
+								<form action="Controlador/Cinstitucion.php" method="post">
 									<div class="card-body">
                                         <div class="form-group">
 											<label for="text1">Nombre de institución</label>
-											<input type="text" class="form-control" id="text1" name="username" placeholder="">
+											<input type="text" class="form-control" id="text1" name="nombreInstitucion" placeholder="">
+										</div>	
+										<div class="form-group">
+											<label for="text1">Correo</label>
+											<input type="email" class="form-control" id="text1" name="correoInstitucion" placeholder="">
 										</div>	
 									</div>
 									<div class="card-action">
-										<button type="submit" class="btn btn-success pull-rigth">Agregar</button>
+										<button type="submit" name="opcion" value="agregar" class="btn btn-success pull-rigth">Agregar</button>
                                     </div>
 								</form>
 							</div>							
