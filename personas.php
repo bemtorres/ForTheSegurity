@@ -32,6 +32,13 @@
 	}
     $personas = PersonaDAO::buscarAll(); 
 
+    // Mensajes
+    $mensaje=0;
+    if(isset($_SESSION['mensaje_persona'])){
+       $mensaje = $_SESSION['mensaje_persona'];
+       $_SESSION['mensaje_persona'] = null;
+    }
+
   ?>
 <?php require_once('layout.php'); ?>
     
@@ -52,6 +59,13 @@
                 </div>
                 
                 <div class="row">
+                    <?php if($mensaje==1){ ?>
+                        <div class="col-md-12">
+                            <div class="alert alert-success" role="alert">
+                                Se ha agregado correctamente.
+                            </div>
+                        </div>
+                    <?php } ?>
                     <div class="col-md-12">
                         <div class="card">
                             <div class="card-header">

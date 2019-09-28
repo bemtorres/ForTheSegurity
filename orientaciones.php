@@ -29,7 +29,12 @@
 		$correo = $usuario->getCorreo();
 	}else{
 		// home
-	}
+    }
+    $mensaje=0;
+    if(isset($_SESSION['mensaje_o'])){
+       $mensaje = $_SESSION['mensaje_o'];
+       $_SESSION['mensaje_o'] = null;
+    }
 
 ?>
 
@@ -53,6 +58,13 @@
                 </div>
                 
                 <div class="row">
+                    <?php if($mensaje==1){ ?>
+                        <div class="col-md-12">
+                            <div class="alert alert-success" role="alert">
+                                Se ha agregado correctamente.
+                            </div>
+                        </div>
+                    <?php } ?>
                     <div class="col-md-12">
                         <div class="card">
                             <div class="card-header">

@@ -29,6 +29,12 @@
 	}else{
 		// home
 	}
+
+	$mensaje=0;
+    if(isset($_SESSION['mensaje_o'])){
+       $mensaje = $_SESSION['mensaje_o'];
+       $_SESSION['mensaje_o'] = null;
+    }
   ?>
 <?php require_once('layout.php'); ?>
 
@@ -47,6 +53,13 @@
 						</ul>
 					</div>
 					<div class="row">
+					<?php if($mensaje==-1){ ?>
+						<div class="col-md-12">
+							<div class="alert alert-danger" role="alert">
+								Error Intente Nuevamente.
+							</div>
+						</div>
+						<?php } ?>
 						<div class="col-md-6">
 							<div class="card">
 								<div class="card-header">

@@ -3,15 +3,26 @@ if (!isset($rootDir)){
 	$rootDir = $_SERVER['DOCUMENT_ROOT'];
 }
 require_once($rootDir . "/DAO/PreguntaDAO.php");
+require_once($rootDir . "/DAO/UsuarioDAO.php");
+
+function newUsername($usuario){
+	$usuario = strtolower($usuario);
+	$correoEncontrado = UsuarioDAO::buscarUsuario($usuario);
+	
+	if($correoEncontrado->getUsername()==$usuario){
+		$anexo = substr(str_shuffle("0123456789abcdefghijklmnopqrstuvwxyz"), 0,1); 
+		$usuario = $usuario . $anexo;
+		return newUsername($usuario);
+	}else{
+		return $usuario;
+	}
+}
+
 
 if(isset($_POST['opcion'])){
 	$opc=htmlspecialchars($_POST['opcion']);
 	if($opc=="agregar"){
-		$opc=htmlspecialchars($_POST['rut']);
-		$opc=htmlspecialchars($_POST['nombre']);
-		$opc=htmlspecialchars($_POST['apellido']);
-		$opc=htmlspecialchars($_POST['correo']);
-		$opc=htmlspecialchars($_POST['sexo']);
+	
 	}
 	elseif($opc=="buscar"){
 

@@ -12,10 +12,10 @@ if(isset($_POST['opcion'])){
 		$orientacion = new Orientacion(1,$nombre,0,1);
 		$e = OrientacionDAO::agregarAuto($orientacion);
 		if($estado){
-			$_SESSION['mensaje_orientacion']=1;
+			$_SESSION['mensaje_o']=1;
 			header('Location: ../orientaciones.php');
 		}else{
-			$_SESSION['mensaje_orientacion']=-1;
+			$_SESSION['mensaje_o']=-1;
 			header('Location: ../orientaciones.php');
 		} 
 	}
