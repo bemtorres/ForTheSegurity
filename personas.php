@@ -83,6 +83,7 @@
                                                 <th>Run</th>
                                                 <th>Nombre Completo</th>
                                                 <th>Correo</th>
+                                                <th>Sexo</th>
                                                 <th></th>
                                             </tr>
                                         </thead>
@@ -91,6 +92,7 @@
                                                 <th>Run</th>
                                                 <th>Nombre Completo</th>
                                                 <th>Correo</th>
+                                                <th>Sexo</th>
                                                 <th></th>
                                             </tr>
                                         </tfoot>

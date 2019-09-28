@@ -70,23 +70,31 @@
 										</div>
 										<div class="form-group">
 											<label for="text1">Nombre</label>
-											<input type="text" class="form-control" id="text1" name="username" placeholder="">
+											<input type="text" class="form-control" id="text1" name="nombre" placeholder="">
 										</div>		
 										<div class="form-group">
 												<label for="text1">Apellido</label>
-												<input type="text" class="form-control" id="text1" name="username" placeholder="">
+												<input type="text" class="form-control" id="text1" name="apellido" placeholder="">
 										</div>
 										
 										<div class="form-group">
 											<label for="text1">Correo</label>
-											<input type="text" class="form-control" id="text1" name="nombres" placeholder="">
+											<input type="text" class="form-control" id="text1" name="correo" placeholder="">
 										</div>
-										
-										
-													
+										<div class="form-check">
+											<label>Sexo</label><br/>
+											<label class="form-radio-label">
+												<input class="form-radio-input" type="radio" name="sexo" value="1"  checked="">
+												<span class="form-radio-sign">Hombre</span>
+											</label>
+											<label class="form-radio-label ml-3">
+												<input class="form-radio-input" type="radio" name="sexo" value="0">
+												<span class="form-radio-sign">Mujer</span>
+											</label>
+										</div>		
 									</div>
 									<div class="card-action">
-										<button type="submit" class="btn btn-success pull-rigth">Agregar</button>
+									<button type="submit" name="opcion" value="agregar" class="btn btn-success pull-rigth">Agregar</button>
 									</div>
 								</form>
 							</div>							
