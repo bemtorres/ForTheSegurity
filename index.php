@@ -17,7 +17,10 @@
 			}
 		});
 	</script>
+	<meta name="theme-color" content="#00843d">
+	<link rel="manifest" href="manifest.json">
 	
+	<script src="js/app.js"></script>
 	<!-- CSS Files -->
 	<link rel="stylesheet" href="/assets/css/bootstrap.min.css">
 	<link rel="stylesheet" href="/assets/css/azzara.min.css">
@@ -57,8 +60,7 @@
 	<script src="/assets/js/core/popper.min.js"></script>
 	<script src="/assets/js/core/bootstrap.min.js"></script>
 	<script src="/assets/js/ready.js"></script>
-	
-	<script src="js/app.js"></script>
+
 
 </body>
 </html>
