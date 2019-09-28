@@ -24,7 +24,7 @@
 									<div class="card-body">
                                         <div class="form-group">
 											<label for="text1">Area</label>
-											<input type="text" class="form-control" id="text1" name="username" placeholder="">
+											<input type="text" class="form-control" id="text1" name="nombre" placeholder="">
 										</div>	
 									</div>
 									<div class="card-action">
