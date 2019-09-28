@@ -70,5 +70,12 @@ $(document).ready(function() {
     });   
 } );
 </script>
+	<script>
+			// $('#img2').addClass('animated bouncelnLeft');
+			$('#img2').addClass('animated bounceInLeft').one(animationEnd, function() {
+				$(this).removeClass('animated bounceOut');
+			});
+        </script>
+            <script src="js/main.js"></script>
 </body>
 </html>

@@ -5,6 +5,7 @@ if (!isset($rootDir)){
 }
 require_once($rootDir . "/DAO/UsuarioDAO.php");
 require_once($rootDir . "/DAO/InstitucionDAO.php");
+require_once($rootDir . "/DAO/PersonaDAO.php");
 
 $username = strtolower(htmlspecialchars($_POST['username']));
 $password = htmlspecialchars($_POST['password']);
@@ -24,6 +25,8 @@ if($us->getUsername()==$username){
                 header('Location: ../InstitucionHome.php');
                 break;
             case 3:
+                $id = PersonaDAO::buscarIdusuario($us->getId_usuario())->getId_persona();
+                $_SESSION['id_persona'] = $id;
                 header('Location: ../homePersona.php');
                 break;
         }

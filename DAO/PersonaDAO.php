@@ -28,6 +28,15 @@ class PersonaDAO {
 		$nuevo = new Persona($ba['id_persona'],$ba['id_usuario'],$ba['rut'],$ba['apellidos'],$ba['foto'],$ba['sexo']);
 		return $nuevo; 
 	}
+	public static function buscarIdusuario($id) {
+		$cc=DB::getInstancia();
+		$stSql = "SELECT * FROM persona WHERE id_usuario=:id_usuario";
+		$rs = $cc->db->prepare($stSql);
+		$rs->execute(array('id_usuario' => $id));
+		$ba = $rs->fetch();
+		$nuevo = new Persona($ba['id_persona'],$ba['id_usuario'],$ba['rut'],$ba['apellidos'],$ba['foto'],$ba['sexo']);
+		return $nuevo; 
+	}
 	public static function buscarRut($rut) {
 		$cc=DB::getInstancia();
 		$stSql = "SELECT * FROM persona WHERE rut=:rut";
