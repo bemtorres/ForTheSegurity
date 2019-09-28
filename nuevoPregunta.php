@@ -58,7 +58,13 @@
 										    <textarea class="form-control" id="comment" rows="5">
 
 										    </textarea>
-                                        </div>
+										</div>
+										<div class="form-check">
+											<label class="form-check-label">
+												<input class="form-check-input" type="checkbox" value="">
+												<span class="form-check-sign">Agree with terms and conditions</span>
+											</label>
+                            			</div>
 									</div>
 									<div class="card-action">
 										<button type="submit" class="btn btn-success pull-rigth">Agregar</button>
