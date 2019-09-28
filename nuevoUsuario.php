@@ -31,7 +31,7 @@
 								<div class="card-header">
 									<div class="card-title">Fomulario Nuevo Usuario</div>
 								</div>
-								<form action="Controlador/Cinstitucion.php" method="post">
+								<form action="Controlador/Cpersona.php" method="post">
 									<div class="card-body">
 									
 										<div class="form-group">

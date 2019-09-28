@@ -1,3 +1,11 @@
+<?php 
+    session_start();
+
+    if (!isset($rootDir)){
+        $rootDir = $_SERVER['DOCUMENT_ROOT'];
+    }
+    require_once ($rootDir . "/DAO/OrientacionDAO.php");	
+  ?>
 <?php require_once('layout.php'); ?>
 
 	<div class="main-panel">
@@ -22,13 +30,13 @@
 								</div>
 								<form action="Controlador/Corientacion.php" method="post">
 									<div class="card-body">
-                                        <div class="form-group">
+									<	div class="form-group">
 											<label for="text1">Area</label>
 											<input type="text" class="form-control" id="text1" name="nombre" placeholder="">
-										</div>	
+										</div>		
 									</div>
 									<div class="card-action">
-										<button type="submit" class="btn btn-success pull-rigth">Agregar</button>
+										<button type="submit" name="opcion" value="agregar" class="btn btn-success pull-rigth">Agregar</button>
                                     </div>
 								</form>
 							</div>							

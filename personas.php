@@ -44,14 +44,16 @@
                                     <table id="basic-datatables" class="display table table-striped table-hover" >
                                         <thead>
                                             <tr>
-                                                <th>Nombre</th>
+                                                <th>Run</th>
+                                                <th>Nombre Completo</th>
                                                 <th>Correo</th>
                                                 <th></th>
                                             </tr>
                                         </thead>
                                         <tfoot>
                                             <tr>
-                                                <th>Nombre</th>
+                                                <th>Run</th>
+                                                <th>Nombre Completo</th>
                                                 <th>Correo</th>
                                                 <th></th>
                                             </tr>
@@ -60,8 +62,10 @@
                                         <?php  foreach ($personas as $p) { 
                                                 $u = UsuarioDAO::buscar($i->getId_usuario()); ?>
                                             <tr>
+                                                <td><?php echo $p->getRut() ?></td>
                                                 <td><?php echo $u->getNombre() . " " . $p->getApellidos() ?></td>
                                                 <td><?php echo $u->getCorreo() ?></td>
+                                                <td><?php if($p->getSexo()==1) {echo "Hombre";}else{echo "Mujer";}?></td>
                                                 <th></th>
                                             </tr>
                                             <?php  } ?>
