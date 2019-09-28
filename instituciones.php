@@ -8,10 +8,7 @@
     require_once ($rootDir . "/DAO/InstitucionDAO.php");
     require_once ($rootDir . "/DAO/UsuarioDAO.php");
 
-    $instituciones = InstitucionDAO::buscarAll();
-   
-    // $clientes = ClienteDAO::buscarAll();
-  
+    $instituciones = InstitucionDAO::buscarAll(); 
 
   ?>
 
