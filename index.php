@@ -57,7 +57,8 @@
 	<script src="/assets/js/core/popper.min.js"></script>
 	<script src="/assets/js/core/bootstrap.min.js"></script>
 	<script src="/assets/js/ready.js"></script>
-	<script src="js/main.js"></script>
+	
+	<script src="js/app.js"></script>
 
 </body>
 </html>
