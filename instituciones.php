@@ -22,7 +22,7 @@
                         <div class="card">
                             <div class="card-header">
                                         <div class="d-flex align-items-center">
-                                            <h4 class="card-title">Tabla de Empleados</h4>
+                                            <h4 class="card-title">Tabla de Instituciones</h4>
                                             <a href="nuevoInstitucion.php" class="btn btn-success btn-round ml-auto"><i class="fa fa-plus">Nueva Institución</i></a>
                                         
                                         </div>
@@ -32,41 +32,21 @@
                                     <table id="basic-datatables" class="display table table-striped table-hover" >
                                         <thead>
                                             <tr>
-                                                <th>Run</th>
-                                                <th>Nombre</th>
-                                                <th>Apellido</th>
-                                                <th>Correo</th>
+                                                <th>Institución</th>
                                                 <th></th>
                                             </tr>
                                         </thead>
                                         <tfoot>
-                                            <tr>									
-                                                <th>Run</th>
-                                                <th>Nombre</th>
-                                                <th>Apellido</th>
-                                                <th>Correo</th>
+                                            <tr>
+                                                <th>Institución</th>
                                                 <th></th>
                                             </tr>
                                         </tfoot>
                                         <tbody>
-                                            <?php   foreach ($usuarios as $u) { ?>
-                                      
                                             <tr>
-                                                <td><?php echo $u->getNombre(); ?></td>
-                                                <td>Elias</td>
-                                                <td>asdasd</td>
-                                                <td>@</td>
-                                                <td>
-                                                    <a href="" class="btn btn-info btn-sm"><i class="fa fa-edit"></i></a>
-                                                    <form action="" method="post">                                                           
-                                                            <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></button>
-                                                        </form>
-                                                </td>
+                                                <td>Monster Inc.</td>
+                                                <th></th>
                                             </tr>
-                                         <?php } ?>
-                                          
-                                            
-                                            
                                         </tbody>
                                     </table>
                                 </div>
