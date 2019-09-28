@@ -30,7 +30,7 @@
                             <div class="card-header">
                                         <div class="d-flex align-items-center">
                                             <h4 class="card-title">Tabla de Empleados</h4>
-                                            <a href="nuevoEmpleado.php" class="btn btn-success btn-round ml-auto"><i class="fa fa-plus">Nuevo Empleados</i></a>
+                                            <a href="nuevoUsuario.php" class="btn btn-success btn-round ml-auto"><i class="fa fa-plus">Nuevo Empleados</i></a>
                                         
                                         </div>
                                     </div>
