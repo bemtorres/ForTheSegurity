@@ -115,6 +115,11 @@
                     </a>
                 </li>
                 <li>
+                    <a href="respuestas.php">
+                        <span class="sub-item">Respuestas</span>
+                    </a>
+                </li>
+                <li>
                     <a href="orientaciones.php">
                         <span class="sub-item">Areas</span>
                     </a>
