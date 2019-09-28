@@ -38,8 +38,7 @@
 <script src="/assets/js/plugin/jqvmap/jquery.vmap.min.js"></script>
 <script src="/assets/js/plugin/jqvmap/maps/jquery.vmap.world.js"></script>
 
-<!-- Google Maps Plugin -->
-<script src="/assets/js/plugin/gmaps/gmaps.js"></script>
+
 
 <!-- Sweet Alert -->
 <script src="/assets/js/plugin/sweetalert/sweetalert.min.js"></script>
