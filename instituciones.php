@@ -10,8 +10,9 @@
 
     $instituciones = InstitucionDAO::buscarAll(); 
     $mensaje=0;
-    if($_SESSION['mensaje_institucion']){
+    if(isset($_SESSION['mensaje_institucion'])){
        $mensaje = $_SESSION['mensaje_institucion'];
+       $_SESSION['mensaje_institucion'] = null;
     }
 	
   ?>

@@ -35,7 +35,7 @@
 									<div class="card-body">
 									
 										<div class="form-group">
-											<label for="text1">Nombre de institución</label>
+											<label for="text1">Nombre de Usuario</label>
 											<input type="text" class="form-control" id="text1" name="username" placeholder="">
 										</div>							
 									</div>
