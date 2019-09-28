@@ -1,11 +1,15 @@
 <?php 
+    session_start();
+    
+    if (!isset($rootDir)){
+        $rootDir = $_SERVER['DOCUMENT_ROOT'];
+    }
+    require_once ($rootDir . "/DAO/OrientacionDAO.php");
 
-    // $usuarios = UsuarioDAO::buscarAll();
-    $usuarios = array();
-
-   
+    $Orientaciones = OrientacionDAO::buscarAll(); 
 
 ?>
+
 <?php require_once('layout.php'); ?>
     
     <div class="main-panel">
@@ -30,7 +34,7 @@
                             <div class="card-header">
                                         <div class="d-flex align-items-center">
                                             <h4 class="card-title">Tabla de Areas</h4>
-                                            <a href="nuevoOrientacion.php" class="btn btn-success btn-round ml-auto"><i class="fa fa-plus">Nueva Area</i></a>
+                                            <a href="nuevoOrientacion.php" class="btn btn-success btn-round ml-auto"><i class="fa fa-plus"> Nueva Area</i></a>
                                         
                                         </div>
                                     </div>
@@ -50,9 +54,13 @@
                                             </tr>
                                         </tfoot>
                                         <tbody>
-                                            <tr>
-                                                <td>Salud</td>
+                                            <?php  foreach ($Orientaciones as $i) { 
+                                                $u = OrientacionDAO::buscar($i->getId_Orientacion()); ?>
+                                                <tr>
+                                                <td><?php echo $u->getDescripcion() ?></td>
+                                                <th></th>
                                             </tr>
+                                            <?php  } ?>
                                         </tbody>
                                     </table>
                                 </div>

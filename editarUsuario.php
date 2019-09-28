@@ -54,6 +54,17 @@
 										<div class="form-group">
 											<label for="text1">Correo</label>
 											<input type="email" class="form-control" id="text1" name="correo" placeholder="">
+										</div>
+										<div class="form-check">
+											<label>Sexo</label><br/>
+											<label class="form-radio-label">
+												<input class="form-radio-input" type="radio" name="txtGenero" value="1"  checked="">
+												<span class="form-radio-sign">Hombre</span>
+											</label>
+											<label class="form-radio-label ml-3">
+												<input class="form-radio-input" type="radio" name="txtGenero" value="0">
+												<span class="form-radio-sign">Mujer</span>
+											</label>
 										</div>							
 									</div>
 									<div class="card-action">

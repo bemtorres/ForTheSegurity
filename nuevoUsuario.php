@@ -15,7 +15,7 @@
 		<div class="content">
 				<div class="page-inner">
 					<div class="page-header">
-						<h4 class="page-title">Nueva Institución</h4>
+						<h4 class="page-title">Nuevo Usuario</h4>
 						<ul class="breadcrumbs">
 							<li class="nav-home">
 								<a href="#">
@@ -29,7 +29,7 @@
 						<div class="col-md-6">
 							<div class="card">
 								<div class="card-header">
-									<div class="card-title">Fomulario Nueva Institución</div>
+									<div class="card-title">Fomulario Nuevo Usuario</div>
 								</div>
 								<form action="Controlador/Cinstitucion.php" method="post">
 									<div class="card-body">

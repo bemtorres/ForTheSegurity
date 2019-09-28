@@ -1,11 +1,16 @@
+
 <?php 
+    session_start();
 
-    // $usuarios = UsuarioDAO::buscarAll();
-    $usuarios = array();
+    if (!isset($rootDir)){
+        $rootDir = $_SERVER['DOCUMENT_ROOT'];
+    }
+    require_once ($rootDir . "/DAO/PersonaDAO.php");
+    require_once ($rootDir . "/DAO/UsuarioDAO.php");
 
-   
+    $personas = PersonaDAO::buscarAll(); 
 
-?>
+  ?>
 <?php require_once('layout.php'); ?>
     
     <div class="main-panel">
@@ -30,7 +35,7 @@
                             <div class="card-header">
                                         <div class="d-flex align-items-center">
                                             <h4 class="card-title">Tabla de Empleados</h4>
-                                            <a href="nuevoUsuario.php" class="btn btn-success btn-round ml-auto"><i class="fa fa-plus">Nuevo Empleados</i></a>
+                                            <a href="nuevoUsuario.php" class="btn btn-success btn-round ml-auto"><i class="fa fa-plus"> Nuevo Empleados</i></a>
                                         
                                         </div>
                                     </div>
@@ -39,41 +44,27 @@
                                     <table id="basic-datatables" class="display table table-striped table-hover" >
                                         <thead>
                                             <tr>
-                                                <th>Run</th>
                                                 <th>Nombre</th>
-                                                <th>Apellido</th>
                                                 <th>Correo</th>
                                                 <th></th>
                                             </tr>
                                         </thead>
                                         <tfoot>
-                                            <tr>									
-                                                <th>Run</th>
+                                            <tr>
                                                 <th>Nombre</th>
-                                                <th>Apellido</th>
                                                 <th>Correo</th>
                                                 <th></th>
                                             </tr>
                                         </tfoot>
                                         <tbody>
-                                            <?php   foreach ($usuarios as $u) { ?>
-                                      
+                                        <?php  foreach ($personas as $p) { 
+                                                $u = UsuarioDAO::buscar($i->getId_usuario()); ?>
                                             <tr>
-                                                <td><?php echo $u->getNombre(); ?></td>
-                                                <td>Elias</td>
-                                                <td>asdasd</td>
-                                                <td>@</td>
-                                                <td>
-                                                    <a href="" class="btn btn-info btn-sm"><i class="fa fa-edit"></i></a>
-                                                    <form action="" method="post">                                                
-                                                            <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></button>
-                                                        </form>
-                                                </td>
+                                                <td><?php echo $u->getNombre() . " " . $p->getApellidos() ?></td>
+                                                <td><?php echo $u->getCorreo() ?></td>
+                                                <th></th>
                                             </tr>
-                                         <?php } ?>
-                                          
-                                            
-                                            
+                                            <?php  } ?>
                                         </tbody>
                                     </table>
                                 </div>
