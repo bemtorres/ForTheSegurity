@@ -36,7 +36,7 @@
 				
 				<a href="home" class="logo text-white">
 				
-				<img src="/assets/img/logo.png" alt="..." class="avatar-img rounded">
+				<img src="/assets/img/Logo.png" alt="..." class="avatar-img rounded">
 				
 				<!-- <img src="/assets/img/Fell-U_logo.png" with="100%" alt="navbar brand" class="navbar-brand"> -->
                 <!-- <strong>ForThe<em>Security</em></strong> -->

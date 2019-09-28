@@ -15,7 +15,7 @@
     <li class="nav-item">
         <a data-toggle="collapse" href="#base1">
             <i class="fas fa-user"></i>
-            <p>Cliente</p>
+            <p>Usuarios</p>
             <span class="caret"></span>
         </a>
         <div class="collapse" id="base1">

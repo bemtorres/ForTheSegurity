@@ -39,6 +39,13 @@ CREATE TABLE institucion
   ) ;
 ALTER TABLE institucion ADD CONSTRAINT institucion_PK PRIMARY KEY ( id_institucion ) ;
 
+CREATE TABLE administrador
+  (
+    id_admin   INTEGER NOT NULL ,
+    id_usuario INTEGER NOT NULL
+  ) ;
+ALTER TABLE administrador ADD CONSTRAINT admin_PK PRIMARY KEY ( id_admin ) ;
+
 
 CREATE TABLE orientacion
   (
@@ -54,6 +61,7 @@ CREATE TABLE persona
   (
     id_persona INT NOT NULL ,
     id_usuario INT NOT NULL ,
+    rut        VARCHAR (15) NOT NULL,
     apellidos  VARCHAR (100) NOT NULL ,
     foto       VARCHAR (100) ,
     sexo       INT NOT NULL
@@ -94,6 +102,17 @@ CREATE TABLE usuario
   ) ;
 ALTER TABLE usuario ADD CONSTRAINT usuario_PK PRIMARY KEY ( id_usuario ) ;
 
+CREATE TABLE correo_sistema
+  (
+    id_correo      INT NOT NULL ,
+    cuenta_usuario VARCHAR (50) NOT NULL UNIQUE,
+    clave_usuario  VARCHAR (10) NOT NULL ,
+    protocolo      VARCHAR (60) NOT NULL ,
+    host           VARCHAR (60) NOT NULL ,
+    port           INT NOT NULL
+  ) ;
+ALTER TABLE correo_sistema ADD CONSTRAINT correo_sistema_PK PRIMARY KEY ( id_correo ) ;
+
 
 ALTER TABLE alternativa CHANGE COLUMN `id_alternativa` `id_alternativa` INT(11) NOT NULL AUTO_INCREMENT ;
 ALTER TABLE usuario CHANGE COLUMN `id_usuario` `id_usuario` INT(11) NOT NULL AUTO_INCREMENT ;
@@ -104,9 +123,9 @@ ALTER TABLE orientacion CHANGE COLUMN `id_orientacion` `id_orientacion` INT(11) 
 ALTER TABLE persona CHANGE COLUMN `id_persona` `id_persona` INT(11) NOT NULL AUTO_INCREMENT ;
 ALTER TABLE pregunta CHANGE COLUMN `id_pregunta` `id_pregunta` INT(11) NOT NULL AUTO_INCREMENT ;
 ALTER TABLE institucion CHANGE COLUMN `id_institucion` `id_institucion` INT(11) NOT NULL AUTO_INCREMENT ;
+ALTER TABLE administrador CHANGE COLUMN `id_admin` `id_admin` INT(11) NOT NULL AUTO_INCREMENT ;
 
-
-
+ALTER TABLE administrador ADD CONSTRAINT admin_usuario_FK FOREIGN KEY ( id_usuario ) REFERENCES usuario ( id_usuario ) ;
 ALTER TABLE alternativa ADD CONSTRAINT alter_pregu_FK FOREIGN KEY ( id_pregunta) REFERENCES pregunta ( id_pregunta ) ;
 ALTER TABLE detalle_persona_inst ADD CONSTRAINT deta_pers_inst_inst_FK FOREIGN KEY ( id_institucion ) REFERENCES institucion ( id_institucion ) ;
 ALTER TABLE detalle_preg_orien ADD CONSTRAINT deta_preg_orien_orie_FK FOREIGN KEY ( id_orientacion ) REFERENCES orientacion ( id_orientacion ) ;
@@ -117,7 +136,9 @@ ALTER TABLE persona ADD CONSTRAINT persona_usuario_FK FOREIGN KEY ( id_usuario )
 ALTER TABLE respuesta ADD CONSTRAINT respue_alterna_FK FOREIGN KEY ( id_alternativa ) REFERENCES alternativa ( id_alternativa ) ;
 ALTER TABLE respuesta ADD CONSTRAINT respuesta_persona_FK FOREIGN KEY ( id_persona ) REFERENCES persona ( id_persona ) ;
 
+INSERT INTO usuario VALUES (1,'admin','5994471abb01112afcc18159f6cc74b4f511b99806da59b3caf5a9c173cacfc5','benja.mora.torres@gmail.com' , '2019-09-28', 'admin',1);
+INSERT INTO administrador VALUES (1,1);
 
 
-
-5994471abb01112afcc18159f6cc74b4f511b99806da59b3caf5a9c173cacfc5
+-- insert
+INSERT INTO correo_sistema VALUES(1,'webscontactos@gmail.com','abcd13abcd','ssl','smtp.gmail.com',465);

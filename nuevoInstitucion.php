@@ -37,7 +37,7 @@
 						<?php if($mensaje==-1){ ?>
 						<div class="col-md-12">
 							<div class="alert alert-danger" role="alert">
-								Ya existe.
+								Correo ya existe.
 							</div>
 						</div>
 						<?php } ?>

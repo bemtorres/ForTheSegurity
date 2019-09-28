@@ -29,7 +29,8 @@ if(isset($_POST['opcion'])){
 		$texto = explode('@',$correo); //separa correo
 		$username = $texto[0]; //asigna lo primero
 		$username = newUsername($username); //comprueba si existe otro igual		
-		$pass = substr(str_shuffle("0123456789"), 0,5); 
+		// $pass = substr(str_shuffle("0123456789"), 0,5); 
+		$pass = "12345";
 		$password = hash('sha256', $pass);
 
 		
