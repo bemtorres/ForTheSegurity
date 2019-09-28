@@ -7,7 +7,29 @@
     }
     require_once ($rootDir . "/DAO/PersonaDAO.php");
     require_once ($rootDir . "/DAO/UsuarioDAO.php");
+    require_once ($rootDir . "/DAO/InstitucionDAO.php");
 
+	$nombreUSuario  ="";
+	$cargo  ="";
+	$id=0;
+	if(isset($_SESSION['id_acceso'])){
+		$usuario = UsuarioDAO::buscar($_SESSION['id_acceso']);
+		$nombreUSuario = $usuario->getNombre();
+		switch ($usuario->getTipo_usuario()) {
+            case 1:
+				$cargo = "Administrador";
+                break;
+            case 2:
+                $cargo = "Institución";
+                break;
+            case 3:
+                $cargo = "Trabajadores";
+                break;
+		}
+		$correo = $usuario->getCorreo();
+	}else{
+		// home
+	}
     $personas = PersonaDAO::buscarAll(); 
 
   ?>
@@ -35,7 +57,7 @@
                             <div class="card-header">
                                         <div class="d-flex align-items-center">
                                             <h4 class="card-title">Tabla de Empleados</h4>
-                                            <a href="nuevoUsuario.php" class="btn btn-success btn-round ml-auto"><i class="fa fa-plus"> Nuevo Empleados</i></a>
+                                            <a href="nuevoPersona.php" class="btn btn-success btn-round ml-auto"><i class="fa fa-plus"> Nuevo Empleados</i></a>
                                         
                                         </div>
                                     </div>
