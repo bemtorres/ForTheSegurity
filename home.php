@@ -1,6 +1,6 @@
 <?php require_once('layout.php'); ?>
-
-<div class="main-panel">
+    
+		<div class="main-panel">
 			<div class="content">
 				<div class="page-inner">
 					<div class="page-header">
@@ -10,6 +10,5 @@
 				</div>
 			</div>			
 		</div>
-
 
 <?php require_once('footer.php'); ?>

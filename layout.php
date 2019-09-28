@@ -526,5 +526,4 @@
 		</div>
 		<!-- End Sidebar -->
 
-        <!-- END LAYOUT -->
-		
+	
