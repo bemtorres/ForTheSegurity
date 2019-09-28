@@ -1,17 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-	<title>Azzara Bootstrap 4 Admin Dashboard</title>
+	<title>Hackathon ACHS</title>
 	<meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
-	<link rel="icon" href="/assets//img/icon.ico" type="image/x-icon"/>
+	<link rel="icon" href="../assets/img/icon.ico" type="image/x-icon"/>
 
 	<!-- Fonts and icons -->
-	<script src="/assets//js/plugin/webfont/webfont.min.js"></script>
+	<script src="../assets/js/plugin/webfont/webfont.min.js"></script>
 	<script>
 		WebFont.load({
 			google: {"families":["Open+Sans:300,400,600,700"]},
-			custom: {"families":["Flaticon", "Font Awesome 5 Solid", "Font Awesome 5 Regular", "Font Awesome 5 Brands"], urls: ['/assets//css/fonts.css']},
+			custom: {"families":["Flaticon", "Font Awesome 5 Solid", "Font Awesome 5 Regular", "Font Awesome 5 Brands"], urls: ['../assets/css/fonts.css']},
 			active: function() {
 				sessionStorage.fonts = true;
 			}
@@ -19,23 +19,22 @@
 	</script>
 
 	<!-- CSS Files -->
-	<link rel="stylesheet" href="/assets//css/bootstrap.min.css">
-	<link rel="stylesheet" href="/assets//css/azzara.min.css">
+	<link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+	<link rel="stylesheet" href="../assets/css/azzara.css">
 
+	<link rel="stylesheet" href="../assets/css/style.css">
 	<!-- CSS Just for demo purpose, don't include it in your project -->
-	<link rel="stylesheet" href="/assets//css/demo.css">
+	<link rel="stylesheet" href="../assets/css/demo.css">
 </head>
-<body>
+<body data-background-color="bg3">
 	<div class="wrapper">
-		<!--
-				Tip 1: You can change the background color of the main header using: data-background-color="blue | purple | light-blue | green | orange | red"
-		-->
-		<div class="main-header" data-background-color="purple">
+
+		<div class="main-header" data-background-color="hackathon">
 			<!-- Logo Header -->
 			<div class="logo-header">
 				
 				<a href="index.html" class="logo">
-					<img src="/assets//img/logoazzara.svg" alt="navbar brand" class="navbar-brand">
+					<img src="../assets/img/logoazzara.svg" alt="navbar brand" class="navbar-brand">
 				</a>
 				<button class="navbar-toggler sidenav-toggler ml-auto" type="button" data-toggle="collapse" data-target="collapse" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon">
@@ -89,7 +88,7 @@
 										<div class="notif-center">
 											<a href="#">
 												<div class="notif-img"> 
-													<img src="/assets//img/jm_denis.jpg" alt="Img Profile">
+													<img src="../assets/img/jm_denis.jpg" alt="Img Profile">
 												</div>
 												<div class="notif-content">
 													<span class="subject">Jimmy Denis</span>
@@ -101,7 +100,7 @@
 											</a>
 											<a href="#">
 												<div class="notif-img"> 
-													<img src="/assets//img/chadengle.jpg" alt="Img Profile">
+													<img src="../assets/img/chadengle.jpg" alt="Img Profile">
 												</div>
 												<div class="notif-content">
 													<span class="subject">Chad</span>
@@ -113,7 +112,7 @@
 											</a>
 											<a href="#">
 												<div class="notif-img"> 
-													<img src="/assets//img/mlane.jpg" alt="Img Profile">
+													<img src="../assets/img/mlane.jpg" alt="Img Profile">
 												</div>
 												<div class="notif-content">
 													<span class="subject">Jhon Doe</span>
@@ -125,7 +124,7 @@
 											</a>
 											<a href="#">
 												<div class="notif-img"> 
-													<img src="/assets//img/talha.jpg" alt="Img Profile">
+													<img src="../assets/img/talha.jpg" alt="Img Profile">
 												</div>
 												<div class="notif-content">
 													<span class="subject">Talha</span>
@@ -153,45 +152,47 @@
 									<div class="dropdown-title">You have 4 new notification</div>
 								</li>
 								<li>
-									<div class="notif-center">
-										<a href="#">
-											<div class="notif-icon notif-primary"> <i class="fa fa-user-plus"></i> </div>
-											<div class="notif-content">
-												<span class="block">
-													New user registered
-												</span>
-												<span class="time">5 minutes ago</span> 
-											</div>
-										</a>
-										<a href="#">
-											<div class="notif-icon notif-success"> <i class="fa fa-comment"></i> </div>
-											<div class="notif-content">
-												<span class="block">
-													Rahmad commented on Admin
-												</span>
-												<span class="time">12 minutes ago</span> 
-											</div>
-										</a>
-										<a href="#">
-											<div class="notif-img"> 
-												<img src="/assets//img/profile2.jpg" alt="Img Profile">
-											</div>
-											<div class="notif-content">
-												<span class="block">
-													Reza send messages to you
-												</span>
-												<span class="time">12 minutes ago</span> 
-											</div>
-										</a>
-										<a href="#">
-											<div class="notif-icon notif-danger"> <i class="fa fa-heart"></i> </div>
-											<div class="notif-content">
-												<span class="block">
-													Farrah liked Admin
-												</span>
-												<span class="time">17 minutes ago</span> 
-											</div>
-										</a>
+									<div class="notif-scroll scrollbar-outer">
+										<div class="notif-center">
+											<a href="#">
+												<div class="notif-icon notif-primary"> <i class="fa fa-user-plus"></i> </div>
+												<div class="notif-content">
+													<span class="block">
+														New user registered
+													</span>
+													<span class="time">5 minutes ago</span> 
+												</div>
+											</a>
+											<a href="#">
+												<div class="notif-icon notif-success"> <i class="fa fa-comment"></i> </div>
+												<div class="notif-content">
+													<span class="block">
+														Rahmad commented on Admin
+													</span>
+													<span class="time">12 minutes ago</span> 
+												</div>
+											</a>
+											<a href="#">
+												<div class="notif-img"> 
+													<img src="../assets/img/profile2.jpg" alt="Img Profile">
+												</div>
+												<div class="notif-content">
+													<span class="block">
+														Reza send messages to you
+													</span>
+													<span class="time">12 minutes ago</span> 
+												</div>
+											</a>
+											<a href="#">
+												<div class="notif-icon notif-danger"> <i class="fa fa-heart"></i> </div>
+												<div class="notif-content">
+													<span class="block">
+														Farrah liked Admin
+													</span>
+													<span class="time">17 minutes ago</span> 
+												</div>
+											</a>
+										</div>
 									</div>
 								</li>
 								<li>
@@ -202,13 +203,13 @@
 						<li class="nav-item dropdown hidden-caret">
 							<a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#" aria-expanded="false">
 								<div class="avatar-sm">
-									<img src="/assets//img/profile.jpg" alt="..." class="avatar-img rounded-circle">
+									<img src="../assets/img/profile.jpg" alt="..." class="avatar-img rounded-circle">
 								</div>
 							</a>
 							<ul class="dropdown-menu dropdown-user animated fadeIn">
 								<li>
 									<div class="user-box">
-										<div class="avatar-lg"><img src="/assets//img/profile.jpg" alt="image profile" class="avatar-img rounded"></div>
+										<div class="avatar-lg"><img src="../assets/img/profile.jpg" alt="image profile" class="avatar-img rounded"></div>
 										<div class="u-text">
 											<h4>Hizrian</h4>
 											<p class="text-muted">hello@example.com</p><a href="profile.html" class="btn btn-rounded btn-danger btn-sm">View Profile</a>
@@ -242,7 +243,7 @@
 				<div class="sidebar-content">
 					<div class="user">
 						<div class="avatar-sm float-left mr-2">
-							<img src="/assets//img/profile.jpg" alt="..." class="avatar-img rounded-circle">
+							<img src="../assets/img/profile.jpg" alt="..." class="avatar-img rounded-circle">
 						</div>
 						<div class="info">
 							<a data-toggle="collapse" href="#collapseExample" aria-expanded="true">
@@ -257,17 +258,17 @@
 							<div class="collapse in" id="collapseExample">
 								<ul class="nav">
 									<li>
-										<a href="#profile">
+										<a href="#profile" class="btn btn-success">
 											<span class="link-collapse">My Profile</span>
 										</a>
 									</li>
 									<li>
-										<a href="#edit">
+										<a href="#edit" class="btn btn-warning">
 											<span class="link-collapse">Edit Profile</span>
 										</a>
 									</li>
 									<li>
-										<a href="#settings">
+										<a href="#settings" class="btn btn-info">
 											<span class="link-collapse">Settings</span>
 										</a>
 									</li>
@@ -526,4 +527,3 @@
 		</div>
 		<!-- End Sidebar -->
 
-	
