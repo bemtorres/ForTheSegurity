@@ -1,17 +1,18 @@
+<?php $nombreUSuario="Benjamin Mora" ?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-	<title>Hackathon ACHS</title>
+	<title>ForTheSecurity</title>
 	<meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
-	<link rel="icon" href="../assets/img/icon.ico" type="image/x-icon"/>
+	<link rel="icon" href="/assets/img/icono.ico" type="image/x-icon"/>
 
 	<!-- Fonts and icons -->
-	<script src="../assets/js/plugin/webfont/webfont.min.js"></script>
+	<script src="/assets/js/plugin/webfont/webfont.min.js"></script>
 	<script>
 		WebFont.load({
 			google: {"families":["Open+Sans:300,400,600,700"]},
-			custom: {"families":["Flaticon", "Font Awesome 5 Solid", "Font Awesome 5 Regular", "Font Awesome 5 Brands"], urls: ['../assets/css/fonts.css']},
+			custom: {"families":["Flaticon", "Font Awesome 5 Solid", "Font Awesome 5 Regular", "Font Awesome 5 Brands"], urls: ['/assets/css/fonts.css']},
 			active: function() {
 				sessionStorage.fonts = true;
 			}
@@ -19,22 +20,24 @@
 	</script>
 
 	<!-- CSS Files -->
-	<link rel="stylesheet" href="../assets/css/bootstrap.min.css">
-	<link rel="stylesheet" href="../assets/css/azzara.css">
+	<link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+	<link rel="stylesheet" href="/assets/css/azzara.min.css">
+	<link rel="stylesheet" href="/assets/css/style.css">
 
-	<link rel="stylesheet" href="../assets/css/style.css">
 	<!-- CSS Just for demo purpose, don't include it in your project -->
-	<link rel="stylesheet" href="../assets/css/demo.css">
+	<link rel="stylesheet" href="/assets/css/demo.css">
 </head>
 <body data-background-color="bg3">
 	<div class="wrapper">
-
+	
 		<div class="main-header" data-background-color="hackathon">
 			<!-- Logo Header -->
 			<div class="logo-header">
 				
-				<a href="index.html" class="logo">
-					<img src="../assets/img/logoazzara.svg" alt="navbar brand" class="navbar-brand">
+				<a href="home" class="logo text-white">
+				<!-- <img src="/assets/img/logo1.svg"  alt="navbar brand" class="navbar-brand"> -->
+                <strong>ForThe<em>Security</em></strong>
+                    
 				</a>
 				<button class="navbar-toggler sidenav-toggler ml-auto" type="button" data-toggle="collapse" data-target="collapse" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon">
@@ -53,21 +56,9 @@
 			<!-- Navbar Header -->
 			<nav class="navbar navbar-header navbar-expand-lg">
 				
-				<div class="container-fluid">
-					<div class="collapse" id="search-nav">
-						<form class="navbar-left navbar-form nav-search mr-md-3">
-							<div class="input-group">
-								<div class="input-group-prepend">
-									<button type="submit" class="btn btn-search pr-1">
-										<i class="fa fa-search search-icon"></i>
-									</button>
-								</div>
-								<input type="text" placeholder="Search ..." class="form-control">
-							</div>
-						</form>
-					</div>
+				<div class="container-fluid">					
 					<ul class="navbar-nav topbar-nav ml-md-auto align-items-center">
-						<li class="nav-item toggle-nav-search hidden-caret">
+					    <!-- <li class="nav-item toggle-nav-search hidden-caret">
 							<a class="nav-link" data-toggle="collapse" href="#search-nav" role="button" aria-expanded="false" aria-controls="search-nav">
 								<i class="fa fa-search"></i>
 							</a>
@@ -88,7 +79,7 @@
 										<div class="notif-center">
 											<a href="#">
 												<div class="notif-img"> 
-													<img src="../assets/img/jm_denis.jpg" alt="Img Profile">
+													<img src="/assets/img/jm_denis.jpg" alt="Img Profile">
 												</div>
 												<div class="notif-content">
 													<span class="subject">Jimmy Denis</span>
@@ -100,7 +91,7 @@
 											</a>
 											<a href="#">
 												<div class="notif-img"> 
-													<img src="../assets/img/chadengle.jpg" alt="Img Profile">
+													<img src="/assets/img/chadengle.jpg" alt="Img Profile">
 												</div>
 												<div class="notif-content">
 													<span class="subject">Chad</span>
@@ -112,7 +103,7 @@
 											</a>
 											<a href="#">
 												<div class="notif-img"> 
-													<img src="../assets/img/mlane.jpg" alt="Img Profile">
+													<img src="/assets/img/mlane.jpg" alt="Img Profile">
 												</div>
 												<div class="notif-content">
 													<span class="subject">Jhon Doe</span>
@@ -124,7 +115,7 @@
 											</a>
 											<a href="#">
 												<div class="notif-img"> 
-													<img src="../assets/img/talha.jpg" alt="Img Profile">
+													<img src="/assets/img/talha.jpg" alt="Img Profile">
 												</div>
 												<div class="notif-content">
 													<span class="subject">Talha</span>
@@ -138,7 +129,7 @@
 									</div>
 								</li>
 								<li>
-									<a class="see-all" href="javascript:void(0);">See all messages<i class="fa fa-angle-right"></i> </a>
+									<a class="see-all" href="javascript:void(0);">Ver todos los mensajes<i class="fa fa-angle-right"></i> </a>
 								</li>
 							</ul>
 						</li>
@@ -174,7 +165,7 @@
 											</a>
 											<a href="#">
 												<div class="notif-img"> 
-													<img src="../assets/img/profile2.jpg" alt="Img Profile">
+													<img src="/assets/img/profile2.jpg" alt="Img Profile">
 												</div>
 												<div class="notif-content">
 													<span class="block">
@@ -199,32 +190,34 @@
 									<a class="see-all" href="javascript:void(0);">See all notifications<i class="fa fa-angle-right"></i> </a>
 								</li>
 							</ul>
-						</li>
+                        </li> 
+                         -->
+
 						<li class="nav-item dropdown hidden-caret">
 							<a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#" aria-expanded="false">
 								<div class="avatar-sm">
-									<img src="../assets/img/profile.jpg" alt="..." class="avatar-img rounded-circle">
+										
+									<img src="/assets/img/profile.jpg" alt="..." class="avatar-img rounded-circle">
 								</div>
 							</a>
 							<ul class="dropdown-menu dropdown-user animated fadeIn">
 								<li>
 									<div class="user-box">
-										<div class="avatar-lg"><img src="../assets/img/profile.jpg" alt="image profile" class="avatar-img rounded"></div>
+										<div class="avatar-lg"><img src="/assets/img/profile.jpg" alt="image profile" class="avatar-img rounded"></div>
 										<div class="u-text">
-											<h4>Hizrian</h4>
-											<p class="text-muted">hello@example.com</p><a href="profile.html" class="btn btn-rounded btn-danger btn-sm">View Profile</a>
+											<h4>Administrador</h4>
+											<p class="text-muted">Admin@lindasonrisa.xyz</p>
+											<a href="profile.html" class="btn btn-rounded btn-danger btn-sm">View Profile</a>
 										</div>
 									</div>
 								</li>
 								<li>
 									<div class="dropdown-divider"></div>
-									<a class="dropdown-item" href="#">My Profile</a>
-									<a class="dropdown-item" href="#">My Balance</a>
-									<a class="dropdown-item" href="#">Inbox</a>
+									<a class="dropdown-item" href="#">Mi perfil</a>
 									<div class="dropdown-divider"></div>
-									<a class="dropdown-item" href="#">Account Setting</a>
+									<a class="dropdown-item" href="#">Cambiar Contraseña</a>
 									<div class="dropdown-divider"></div>
-									<a class="dropdown-item" href="#">Logout</a>
+								<a class="dropdown-item" href="/">Salir</a>
 								</li>
 							</ul>
 						</li>
@@ -243,12 +236,12 @@
 				<div class="sidebar-content">
 					<div class="user">
 						<div class="avatar-sm float-left mr-2">
-							<img src="../assets/img/profile.jpg" alt="..." class="avatar-img rounded-circle">
+							<img src="/assets/img/profile.jpg" alt="..." class="avatar-img rounded-circle">
 						</div>
 						<div class="info">
 							<a data-toggle="collapse" href="#collapseExample" aria-expanded="true">
 								<span>
-									Hizrian
+									<?php echo $nombreUSuario ?>
 									<span class="user-level">Administrator</span>
 									<span class="caret"></span>
 								</span>
@@ -258,272 +251,26 @@
 							<div class="collapse in" id="collapseExample">
 								<ul class="nav">
 									<li>
-										<a href="#profile" class="btn btn-success">
-											<span class="link-collapse">My Profile</span>
+										<a href="#profile">
+											<span class="link-collapse btn btn-block btn-hackathon-success text-white">Mi Perfil</span>
 										</a>
 									</li>
 									<li>
-										<a href="#edit" class="btn btn-warning">
-											<span class="link-collapse">Edit Profile</span>
+										<a href="#edit">
+											<span class="link-collapse btn btn-block btn-hackathon-warning text-white">Cambio de Contraseña</span>
 										</a>
 									</li>
 									<li>
-										<a href="#settings" class="btn btn-info">
-											<span class="link-collapse">Settings</span>
+										<a href="/">
+											<span class="link-collapse btn btn-block btn-danger text-white">Salir</span>
 										</a>
 									</li>
 								</ul>
 							</div>
 						</div>
 					</div>
-					<ul class="nav">
-						<li class="nav-item active">
-							<a href="index.html">
-								<i class="fas fa-home"></i>
-								<p>Dashboard</p>
-								<span class="badge badge-count">5</span>
-							</a>
-						</li>
-						<li class="nav-section">
-							<span class="sidebar-mini-icon">
-								<i class="fa fa-ellipsis-h"></i>
-							</span>
-							<h4 class="text-section">Components</h4>
-						</li>
-						<li class="nav-item">
-							<a data-toggle="collapse" href="#base">
-								<i class="fas fa-layer-group"></i>
-								<p>Base</p>
-								<span class="caret"></span>
-							</a>
-							<div class="collapse" id="base">
-								<ul class="nav nav-collapse">
-									<li>
-										<a href="components/avatars.html">
-											<span class="sub-item">Avatars</span>
-										</a>
-									</li>
-									<li>
-										<a href="components/buttons.html">
-											<span class="sub-item">Buttons</span>
-										</a>
-									</li>
-									<li>
-										<a href="components/gridsystem.html">
-											<span class="sub-item">Grid System</span>
-										</a>
-									</li>
-									<li>
-										<a href="components/panels.html">
-											<span class="sub-item">Panels</span>
-										</a>
-									</li>
-									<li>
-										<a href="components/notifications.html">
-											<span class="sub-item">Notifications</span>
-										</a>
-									</li>
-									<li>
-										<a href="components/sweetalert.html">
-											<span class="sub-item">Sweet Alert</span>
-										</a>
-									</li>
-									<li>
-										<a href="components/font-awesome-icons.html">
-											<span class="sub-item">Font Awesome Icons</span>
-										</a>
-									</li>
-									<li>
-										<a href="components/flaticons.html">
-											<span class="sub-item">Flaticons</span>
-										</a>
-									</li>
-									<li>
-										<a href="components/typography.html">
-											<span class="sub-item">Typography</span>
-										</a>
-									</li>
-								</ul>
-							</div>
-						</li>
-						<li class="nav-item">
-							<a data-toggle="collapse" href="#forms">
-								<i class="fas fa-pen-square"></i>
-								<p>Forms</p>
-								<span class="caret"></span>
-							</a>
-							<div class="collapse" id="forms">
-								<ul class="nav nav-collapse">
-									<li>
-										<a href="forms/forms.html">
-											<span class="sub-item">Basic Form</span>
-										</a>
-									</li>
-									
-								</ul>
-							</div>
-						</li>
-						<li class="nav-item">
-							<a data-toggle="collapse" href="#tables">
-								<i class="fas fa-table"></i>
-								<p>Tables</p>
-								<span class="caret"></span>
-							</a>
-							<div class="collapse" id="tables">
-								<ul class="nav nav-collapse">
-									<li>
-										<a href="tables/tables.html">
-											<span class="sub-item">Basic Table</span>
-										</a>
-									</li>
-									<li>
-										<a href="tables/datatables.html">
-											<span class="sub-item">Datatables</span>
-										</a>
-									</li>
-								</ul>
-							</div>
-						</li>
-						<li class="nav-item">
-							<a data-toggle="collapse" href="#maps">
-								<i class="fas fa-map-marker-alt"></i>
-								<p>Maps</p>
-								<span class="caret"></span>
-							</a>
-							<div class="collapse" id="maps">
-								<ul class="nav nav-collapse">
-									<li>
-										<a href="maps/googlemaps.html">
-											<span class="sub-item">Google Maps</span>
-										</a>
-									</li>
-									<li>
-										<a href="maps/fullscreenmaps.html">
-											<span class="sub-item">Full Screen Maps</span>
-										</a>
-									</li>
-									<li>
-										<a href="maps/jqvmap.html">
-											<span class="sub-item">JQVMap</span>
-										</a>
-									</li>
-								</ul>
-							</div>
-						</li>
-						<li class="nav-item">
-							<a data-toggle="collapse" href="#charts">
-								<i class="far fa-chart-bar"></i>
-								<p>Charts</p>
-								<span class="caret"></span>
-							</a>
-							<div class="collapse" id="charts">
-								<ul class="nav nav-collapse">
-									<li>
-										<a href="charts/charts.html">
-											<span class="sub-item">Chart Js</span>
-										</a>
-									</li>
-									<li>
-										<a href="charts/sparkline.html">
-											<span class="sub-item">Sparkline</span>
-										</a>
-									</li>
-								</ul>
-							</div>
-						</li>
-						
-						<li class="nav-item">
-							<a href="widgets.html">
-								<i class="fas fa-desktop"></i>
-								<p>Widgets</p>
-								<span class="badge badge-count badge-success">4</span>
-							</a>
-						</li>
-						<li class="nav-item">
-							<a data-toggle="collapse" href="#custompages">
-								<i class="fas fa-paint-roller"></i>
-								<p>Custom Pages</p>
-								<span class="caret"></span>
-							</a>
-							<div class="collapse" id="custompages">
-								<ul class="nav nav-collapse">
-									<li>
-										<a href="login.html">
-											<span class="sub-item">Login & Register 1</span>
-										</a>
-									</li>
-									<li>
-										<a href="login2.html">
-											<span class="sub-item">Login & Register 2</span>
-										</a>
-									</li>
-									<li>
-										<a href="userprofile.html">
-											<span class="sub-item">User Profile</span>
-										</a>
-									</li>
-									<li>
-										<a href="404.html">
-											<span class="sub-item">404</span>
-										</a>
-									</li>
-								</ul>
-							</div>
-						</li>
-						<li class="nav-item">
-							<a data-toggle="collapse" href="#submenu">
-								<i class="fas fa-bars"></i>
-								<p>Menu Levels</p>
-								<span class="caret"></span>
-							</a>
-							<div class="collapse" id="submenu">
-								<ul class="nav nav-collapse">
-									<li>
-										<a data-toggle="collapse" href="#subnav1">
-											<span class="sub-item">Level 1</span>
-											<span class="caret"></span>
-										</a>
-										<div class="collapse" id="subnav1">
-											<ul class="nav nav-collapse subnav">
-												<li>
-													<a href="#">
-														<span class="sub-item">Level 2</span>
-													</a>
-												</li>
-												<li>
-													<a href="#">
-														<span class="sub-item">Level 2</span>
-													</a>
-												</li>
-											</ul>
-										</div>
-									</li>
-									<li>
-										<a data-toggle="collapse" href="#subnav2">
-											<span class="sub-item">Level 1</span>
-											<span class="caret"></span>
-										</a>
-										<div class="collapse" id="subnav2">
-											<ul class="nav nav-collapse subnav">
-												<li>
-													<a href="#">
-														<span class="sub-item">Level 2</span>
-													</a>
-												</li>
-											</ul>
-										</div>
-									</li>
-									<li>
-										<a href="#">
-											<span class="sub-item">Level 1</span>
-										</a>
-									</li>
-								</ul>
-							</div>
-						</li>
-					</ul>
+                    <?php require_once('nav.php'); ?>
 				</div>
 			</div>
 		</div>
-		<!-- End Sidebar -->
 

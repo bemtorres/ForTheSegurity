@@ -3,3 +3,15 @@
     .main-header[data-background-color="hackathon"] .navbar-header {
       background: #00843D !important; }
   
+
+.btn-hackathon-warning {
+    background: #EA7E1D!important;
+    border-color: #EA7E1D!important;
+    color: #fff!important;
+}
+
+.btn-hackathon-success {
+    background: #00843D!important;
+    border-color: #00843D!important;
+    color: #fff!important;
+}
