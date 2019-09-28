@@ -7,14 +7,14 @@ require_once ($rootDir ."/Modelo/Usuario.php");
 class UsuarioDAO {
 	public static function agregar($nuevo) {
 		$cc=DB::getInstancia();
-		$stSql = "INSERT INTO usuario (id_usuario,username,password,correo,fecha_create,nombre,activo) VALUES(:id_usuario,:username,:password,:correo,:fecha_create,:nombre,:activo)";
+		$stSql = "INSERT INTO usuario (id_usuario,username,password,correo,fecha_create,nombre,tipo_usuario,activo) VALUES(:id_usuario,:username,:password,:correo,:fecha_create,:nombre,:tipo_usuario,:activo)";
 		$rs = $cc->db->prepare($stSql);
 		$params = self::getParams($nuevo);
 		return $rs->execute($params);
 	}
 	public static function agregarAuto($nuevo) {
 		$cc=DB::getInstancia();
-		$stSql = "INSERT INTO usuario (username,password,correo,fecha_create,nombre,activo) VALUES(:username,:password,:correo,:fecha_create,:nombre,:activo)";
+		$stSql = "INSERT INTO usuario (username,password,correo,fecha_create,nombre,tipo_usuario,activo) VALUES(:username,:password,:correo,:fecha_create,:nombre,:tipo_usuario,:activo)";
 		$rs = $cc->db->prepare($stSql);
 		$params=self::getParamsAuto($nuevo);
 		return $rs->execute($params);
@@ -25,7 +25,16 @@ class UsuarioDAO {
 		$rs = $cc->db->prepare($stSql);
 		$rs->execute(array('id_usuario' => $id));
 		$ba = $rs->fetch();
-		$nuevo = new Usuario($ba['id_usuario'],$ba['username'],$ba['password'],$ba['correo'],$ba['fecha_create'],$ba['nombre'],$ba['activo']);
+		$nuevo = new Usuario($ba['id_usuario'],$ba['username'],$ba['password'],$ba['correo'],$ba['fecha_create'],$ba['nombre'],$ba['tipo_usuario'],$ba['activo']);
+		return $nuevo; 
+	}	
+	public static function buscarUsuario($username) {
+		$cc=DB::getInstancia();
+		$stSql = "SELECT * FROM usuario WHERE username=:username";
+		$rs = $cc->db->prepare($stSql);
+		$rs->execute(array('username' => $username));
+		$ba = $rs->fetch();
+		$nuevo = new Usuario($ba['id_usuario'],$ba['username'],$ba['password'],$ba['correo'],$ba['fecha_create'],$ba['nombre'],$ba['tipo_usuario'],$ba['activo']);
 		return $nuevo; 
 	}
 	public static function buscarCorreo($correo) {
@@ -34,21 +43,12 @@ class UsuarioDAO {
 		$rs = $cc->db->prepare($stSql);
 		$rs->execute(array('correo' => $correo));
 		$ba = $rs->fetch();
-		$nuevo = new Usuario($ba['id_usuario'],$ba['username'],$ba['password'],$ba['correo'],$ba['fecha_create'],$ba['nombre'],$ba['activo']);
-		return $nuevo; 
-	}
-	public static function buscarUsuario($username) {
-		$cc=DB::getInstancia();
-		$stSql = "SELECT * FROM usuario WHERE username=:username";
-		$rs = $cc->db->prepare($stSql);
-		$rs->execute(array('username' => $username));
-		$ba = $rs->fetch();
-		$nuevo = new Usuario($ba['id_usuario'],$ba['username'],$ba['password'],$ba['correo'],$ba['fecha_create'],$ba['nombre'],$ba['activo']);
+		$nuevo = new Usuario($ba['id_usuario'],$ba['username'],$ba['password'],$ba['correo'],$ba['fecha_create'],$ba['nombre'],$ba['tipo_usuario'],$ba['activo']);
 		return $nuevo; 
 	}
 	public static function actualizar($nuevo) {
 		$cc=DB::getInstancia();
-		$stSql = "UPDATE usuario SET username=:username,password=:password,correo=:correo,fecha_create=:fecha_create,nombre=:nombre,activo=:activo WHERE id_usuario=:id_usuario";
+		$stSql = "UPDATE usuario SET username=:username,password=:password,correo=:correo,fecha_create=:fecha_create,nombre=:nombre,tipo_usuario=:tipo_usuario,activo=:activo WHERE id_usuario=:id_usuario";
 		$rs = $cc->db->prepare($stSql);
 		$params = self::getParams($nuevo);
 		return $rs->execute($params);
@@ -67,7 +67,7 @@ class UsuarioDAO {
 		$c = $rs->fetchAll();
 		$pila = array();
 		foreach ($c as $ba) {
-			$nuevo = new Usuario($ba['id_usuario'],$ba['username'],$ba['password'],$ba['correo'],$ba['fecha_create'],$ba['nombre'],$ba['activo']);
+			$nuevo = new Usuario($ba['id_usuario'],$ba['username'],$ba['password'],$ba['correo'],$ba['fecha_create'],$ba['nombre'],$ba['tipo_usuario'],$ba['activo']);
 			array_push($pila, $nuevo);
 		}
 		return $pila; 
@@ -88,6 +88,7 @@ class UsuarioDAO {
 		$params['correo'] = $nuevo->getCorreo();
 		$params['fecha_create'] = $nuevo->getFecha_create();
 		$params['nombre'] = $nuevo->getNombre();
+		$params['tipo_usuario'] = $nuevo->getTipo_usuario();
 		$params['activo'] = $nuevo->getActivo();
 		return $params;
 	}
@@ -98,6 +99,7 @@ class UsuarioDAO {
 		$params['correo'] = $nuevo->getCorreo();
 		$params['fecha_create'] = $nuevo->getFecha_create();
 		$params['nombre'] = $nuevo->getNombre();
+		$params['tipo_usuario'] = $nuevo->getTipo_usuario();
 		$params['activo'] = $nuevo->getActivo();
 		return $params;
 	}

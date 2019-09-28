@@ -34,7 +34,7 @@ if(isset($_POST['opcion'])){
 		$password = hash('sha256', $pass);
 
 		
-		$usuario = new Usuario(1,$username,$password,$correo,$fecha,$nombre,1);
+		$usuario = new Usuario(1,$username,$password,$correo,$fecha,$nombre,2,1);
 		$estado1 = UsuarioDAO::agregarAuto($usuario);
 
 		$usu = UsuarioDAO::buscarUsuario($username);

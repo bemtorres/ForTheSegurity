@@ -6,15 +6,17 @@ class Usuario {
 	private $correo; //varchar(100) MAX 100 Null=NO  
 	private $fecha_create; //datetime Null=NO  
 	private $nombre; //varchar(100) MAX 100 Null=NO  
+	private $tipo_usuario; //int(11) MAX 11 Null=NO  
 	private $activo; //int(11) MAX 11 Null=NO  
 
-	function __construct($id_usuario,$username,$password,$correo,$fecha_create,$nombre,$activo){
+	function __construct($id_usuario,$username,$password,$correo,$fecha_create,$nombre,$tipo_usuario,$activo){
 		$this->id_usuario=$id_usuario;
 		$this->username=$username;
 		$this->password=$password;
 		$this->correo=$correo;
 		$this->fecha_create=$fecha_create;
 		$this->nombre=$nombre;
+		$this->tipo_usuario=$tipo_usuario;
 		$this->activo=$activo;
 	}
 
@@ -40,6 +42,10 @@ class Usuario {
 
 	function getNombre(){
 		return $this->nombre;
+	}
+
+	function getTipo_usuario(){
+		return $this->tipo_usuario;
 	}
 
 	function getActivo(){
@@ -68,6 +74,10 @@ class Usuario {
 
 	function setNombre($nombre){
 		$this->nombre=$nombre;
+	}
+
+	function setTipo_usuario($tipo_usuario){
+		$this->tipo_usuario=$tipo_usuario;
 	}
 
 	function setActivo($activo){

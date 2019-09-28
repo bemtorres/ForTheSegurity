@@ -98,6 +98,7 @@ CREATE TABLE usuario
     correo       VARCHAR (100) NOT NULL unique ,
     fecha_create DATETIME NOT NULL ,
     nombre       VARCHAR (100) NOT NULL ,
+    tipo_usuario INTEGER NOT NULL ,
     activo       INT NOT NULL
   ) ;
 ALTER TABLE usuario ADD CONSTRAINT usuario_PK PRIMARY KEY ( id_usuario ) ;
@@ -136,7 +137,12 @@ ALTER TABLE persona ADD CONSTRAINT persona_usuario_FK FOREIGN KEY ( id_usuario )
 ALTER TABLE respuesta ADD CONSTRAINT respue_alterna_FK FOREIGN KEY ( id_alternativa ) REFERENCES alternativa ( id_alternativa ) ;
 ALTER TABLE respuesta ADD CONSTRAINT respuesta_persona_FK FOREIGN KEY ( id_persona ) REFERENCES persona ( id_persona ) ;
 
-INSERT INTO usuario VALUES (1,'admin','5994471abb01112afcc18159f6cc74b4f511b99806da59b3caf5a9c173cacfc5','benja.mora.torres@gmail.com' , '2019-09-28', 'admin',1);
+
+-- 1 admin
+-- 2 institucion
+-- 3 persona 
+
+INSERT INTO usuario VALUES (1,'admin','5994471abb01112afcc18159f6cc74b4f511b99806da59b3caf5a9c173cacfc5','benja.mora.torres@gmail.com' , '2019-09-28', 'admin',1,1);
 INSERT INTO administrador VALUES (1,1);
 
 

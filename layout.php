@@ -1,9 +1,9 @@
-<?php $nombreUSuario="Benjamin Mora" ?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-	<title>Fell-U</title>
+	<title>Feel-U</title>
 	<meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
 	<link rel="icon" href="/assets/img/logoICO.ico" type="image/x-icon"/>
 
@@ -208,9 +208,9 @@
 									<div class="user-box">
 										<div class="avatar-lg"><img src="/assets/img/profile.jpg" alt="image profile" class="avatar-img rounded"></div>
 										<div class="u-text">
-											<h4>Administrador</h4>
-											<p class="text-muted">Admin@lindasonrisa.xyz</p>
-											<a href="profile.html" class="btn btn-rounded btn-danger btn-sm">View Profile</a>
+											<?php echo $cargo ?>
+											<!-- <h4>Administrador</h4> -->
+											<p class="text-muted"><?php echo $correo ?></p>
 										</div>
 									</div>
 								</li>
