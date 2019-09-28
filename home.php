@@ -35,9 +35,12 @@
 			<div class="content">
 				<div class="page-inner">
 					<div class="page-header">
-						<h4 class="page-title">Starter Template</h4>
+						<!-- <h4 class="page-title">Starter Template</h4> -->
 					</div>
-					<div class="page-category">Starter Description</div>
+					<div class="page-category">
+
+						<img src="assets/img/Logo.png" class="img-responsive" width="100%"  alt="" >
+					</div>
 				</div>
 			</div>			
 		</div>

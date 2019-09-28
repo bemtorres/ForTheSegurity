@@ -1,4 +1,5 @@
 <?php
+session_start();
 if (!isset($rootDir)){
 	$rootDir = $_SERVER['DOCUMENT_ROOT'];
 }

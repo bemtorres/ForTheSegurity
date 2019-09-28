@@ -272,7 +272,13 @@
 							</div>
 						</div>
 					</div>
-                    <?php require_once('nav.php'); ?>
+					<?php 
+						if($usuario->getTipo_usuario()==1){
+								require_once('nav.php');
+						}elseif($usuario->getTipo_usuario()==2){
+
+						}?>
+					
 				</div>
 			</div>
 		</div>
