@@ -75,4 +75,17 @@ class Detalle_persona_instDAO {
 		$params['id_institucion'] = $nuevo->getId_institucion();
 		return $params;
 	}
+	public static function busarPersonaIns($id_institucion) {
+		$cc=DB::getInstancia();
+		$stSql = "SELECT * FROM detalle_persona_inst WHERE id_institucion=:id_institucion";
+		$rs = $cc->db->prepare($stSql);
+		$rs->execute(array('id_institucion' => $id_institucion));
+		$c = $rs->fetchAll();
+		$pila = array();
+		foreach ($c as $ba) {
+			$nuevo = new Detalle_persona_inst($ba['id_deta_pers_inst'],$ba['id_persona'],$ba['id_institucion']);
+			array_push($pila, $nuevo);
+		}
+		return $pila; 
+	}
 }

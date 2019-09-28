@@ -245,7 +245,7 @@
 							<a data-toggle="collapse" href="#collapseExample" aria-expanded="true">
 								<span>
 									<?php echo $nombreUSuario ?>
-									<span class="user-level">Administrator</span>
+									<span class="user-level"><?php echo $cargo ?></span>
 									<span class="caret"></span>
 								</span>
 							</a>
@@ -276,7 +276,7 @@
 						if($usuario->getTipo_usuario()==1){
 								require_once('nav.php');
 						}elseif($usuario->getTipo_usuario()==2){
-
+							require_once('nav_institucion.php');
 						}?>
 					
 				</div>

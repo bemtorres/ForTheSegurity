@@ -37,20 +37,45 @@ if(isset($_POST['opcion'])){
 		$pass = "12345";
 		$password = hash('sha256', $pass);
 		
-		$usuario = new Usuario(1,$username,$password,$correo,$fecha,$nombre,3,1);
-		$estado1 = UsuarioDAO::agregarAuto($usuario);
-
-		$usu = UsuarioDAO::buscarUsuario($username);
-		$persona = new Persona(1,$usu->getId_usuario(),$rut,$apellido,"",$sexo);
-		$estado = PersonaDAO::agregarAuto($persona);
+		$buscarPersona = PersonaDAO::buscarRut($rut);
+		if($buscarPersona->getRut()!=$rut){
+			$usuario = new Usuario(1,$username,$password,$correo,$fecha,$nombre,3,1);
+			$estado1 = UsuarioDAO::agregarAuto($usuario);
 	
-		if($estado){
-			$_SESSION['mensaje_persona']=1;
-			header('Location: ../personas.php');
+			$usu = UsuarioDAO::buscarUsuario($username);
+			$persona = new Persona(1,$usu->getId_usuario(),$rut,$apellido,"",$sexo);
+			$estado = PersonaDAO::agregarAuto($persona);
+		
+			if(isset($_SESSION['id_inst'])){
+				if($estado){
+					$_SESSION['mensaje_persona']=1;
+					header('Location: ../institucionPersonas.php');
+				}else{
+					$_SESSION['mensaje_persona']=-1;
+					header('Location: ../nuevoPersona.php');
+				} 
+			 }else{
+				if($estado){
+					$_SESSION['mensaje_persona']=1;
+					header('Location: ../personas.php');
+				}else{
+					$_SESSION['mensaje_persona']=-1;
+					header('Location: ../nuevoPersona.php');
+				} 
+			 }
+			
 		}else{
 			$_SESSION['mensaje_persona']=-1;
 			header('Location: ../nuevoPersona.php');
-		} 
+		}
+
+
+	
+		
+
+	
+		
+	
 
 	}
 	elseif($opc=="buscar"){

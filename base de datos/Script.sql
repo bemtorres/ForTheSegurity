@@ -61,7 +61,7 @@ CREATE TABLE persona
   (
     id_persona INT NOT NULL ,
     id_usuario INT NOT NULL ,
-    rut        VARCHAR (15) NOT NULL,
+    rut        VARCHAR (15) NOT NULL UNIQUE,
     apellidos  VARCHAR (100) NOT NULL ,
     foto       VARCHAR (100) ,
     sexo       INT NOT NULL

@@ -28,6 +28,15 @@ class InstitucionDAO {
 		$nuevo = new Institucion($ba['id_institucion'],$ba['id_usuario']);
 		return $nuevo; 
 	}
+	public static function buscarIns($id) {
+		$cc=DB::getInstancia();
+		$stSql = "SELECT * FROM institucion WHERE id_usuario=:id_usuario";
+		$rs = $cc->db->prepare($stSql);
+		$rs->execute(array('id_usuario' => $id));
+		$ba = $rs->fetch();
+		$nuevo = new Institucion($ba['id_institucion'],$ba['id_usuario']);
+		return $nuevo; 
+	}
 	public static function actualizar($nuevo) {
 		$cc=DB::getInstancia();
 		$stSql = "UPDATE institucion SET id_usuario=:id_usuario WHERE id_institucion=:id_institucion";

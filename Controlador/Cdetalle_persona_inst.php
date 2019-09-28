@@ -4,27 +4,19 @@ if (!isset($rootDir)){
 }
 require_once($rootDir . "/DAO/Detalle_persona_instDAO.php");
 
-if(isset($_POST['opcion'])){
-	$opc=htmlspecialchars($_POST['opcion']);
-	if($opc=="agregar"){
 
-	}
-	elseif($opc=="buscar"){
+if(isset($_GET['id_persona'])){
+	$id_per = $_GET['id_persona'];	
+	$id_ins = $_GET['id_i'];
+	$d = new Detalle_persona_inst(1,$id_per,$id_ins);
+	$listado = Detalle_persona_instDAO::buscarAll();
 
-		if(isset($_POST['id_deta_pers_inst'])){
-			$ID=htmlspecialchars($_POST['id_deta_pers_inst']);
-			$encontrado = Detalle_persona_instDAO::buscar($ID); 
-			print_r($encontrado); 
-		}else{
-			echo "error";
-		}
-	}
-	elseif($opc=="actualizar"){
-
-	}
-	elseif($opc=="eliminar"){
-
-	}
-}else{
-	echo "error";
+	$e = Detalle_persona_instDAO::agregarAuto($d);
+	if($e){
+		$_SESSION['mensaje_institucion']=1;
+		header('Location: ../InstitucionPersonas.php');
+	}else{
+		$_SESSION['mensaje_institucion']=-1;
+		header('Location: ../InstitucionPersonas.php');
+	} 
 }

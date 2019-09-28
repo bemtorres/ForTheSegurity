@@ -90,4 +90,18 @@ class PersonaDAO {
 		$params['sexo'] = $nuevo->getSexo();
 		return $params;
 	}
+
+	public static function buscarRun($rut) {
+		$cc=DB::getInstancia();
+		$stSql = "SELECT * FROM persona WHERE rut=:rut";
+		$rs = $cc->db->prepare($stSql);
+		$rs->execute(array('rut' => $rut));
+		$c = $rs->fetchAll();
+		$pila = array();
+		foreach ($c as $ba) {
+			$nuevo = new Persona($ba['id_persona'],$ba['id_usuario'],$ba['rut'],$ba['apellidos'],$ba['foto'],$ba['sexo']);
+			array_push($pila, $nuevo);
+		}
+		return $pila; 
+	}
 }
