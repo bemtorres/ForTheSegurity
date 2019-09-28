@@ -65,7 +65,7 @@
                                                 <td>@</td>
                                                 <td>
                                                     <a href="" class="btn btn-info btn-sm"><i class="fa fa-edit"></i></a>
-                                                    <form action="" method="post">                                                           
+                                                    <form action="" method="post">                                                
                                                             <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></button>
                                                         </form>
                                                 </td>
