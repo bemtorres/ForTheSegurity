@@ -42,7 +42,7 @@
         <div class="collapse" id="charts1">
             <ul class="nav nav-collapse">
                 <li>
-                    <a href="estadistica.php">
+                    <a href="estadisticas.php">
                         <span class="sub-item">Estadística</span>
                     </a>
                 </li>
