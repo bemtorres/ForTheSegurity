@@ -5,10 +5,24 @@ if (!isset($rootDir)){
 require_once($rootDir . "/DAO/PersonaDAO.php");
 require_once($rootDir . "/DAO/UsuarioDAO.php");
 
+function newUsername($usuario){
+	$usuario = strtolower($usuario);
+	$correoEncontrado = UsuarioDAO::buscarUsuario($usuario);
+
+	if($correoEncontrado->getUsername()==$usuario){
+		$anexo = substr(str_shuffle("0123456789abcdefghijklmnopqrstuvwxyz"), 0,1); 
+		$usuario = $usuario . $anexo;
+		return newUsername($usuario);
+	}else{
+		return $usuario;
+	}
+}
+
+
 if(isset($_POST['opcion'])){
 	$opc=htmlspecialchars($_POST['opcion']);
 	if($opc=="agregar"){
-		$rut=htmlspecialchars($_POST['rut']);
+		$rut=htmlspecialchars($_POST['run']);
 		$nombre=htmlspecialchars($_POST['nombre']);
 		$apellido=htmlspecialchars($_POST['apellido']);
 		$correo=htmlspecialchars($_POST['correo']);

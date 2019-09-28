@@ -98,12 +98,14 @@
                                         </tfoot>
                                         <tbody>
                                         <?php  foreach ($personas as $p) { 
-                                                $u = UsuarioDAO::buscar($i->getId_usuario()); ?>
+                                                $u = UsuarioDAO::buscar($p->getId_usuario()); ?>
                                             <tr>
                                                 <td><?php echo $p->getRut() ?></td>
                                                 <td><?php echo $u->getNombre() . " " . $p->getApellidos() ?></td>
                                                 <td><?php echo $u->getCorreo() ?></td>
                                                 <td><?php if($p->getSexo()==1) {echo "Hombre";}else{echo "Mujer";}?></td>
+                                                
+                                            
                                                 <th></th>
                                             </tr>
                                             <?php  } ?>
