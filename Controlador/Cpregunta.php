@@ -3,25 +3,41 @@ if (!isset($rootDir)){
 	$rootDir = $_SERVER['DOCUMENT_ROOT'];
 }
 require_once($rootDir . "/DAO/PreguntaDAO.php");
-require_once($rootDir . "/DAO/UsuarioDAO.php");
+require_once($rootDir . "/DAO/OrientacionDAO.php");
 
-function newUsername($usuario){
-	$usuario = strtolower($usuario);
-	$correoEncontrado = UsuarioDAO::buscarUsuario($usuario);
-	
-	if($correoEncontrado->getUsername()==$usuario){
-		$anexo = substr(str_shuffle("0123456789abcdefghijklmnopqrstuvwxyz"), 0,1); 
-		$usuario = $usuario . $anexo;
-		return newUsername($usuario);
-	}else{
-		return $usuario;
-	}
-}
-
+require_once($rootDir . "/DAO/Detalle_preg_orienDAO.php");
 
 if(isset($_POST['opcion'])){
+
 	$opc=htmlspecialchars($_POST['opcion']);
 	if($opc=="agregar"){
+		if(isset($_POST['items'])){
+			
+			$p = htmlspecialchars($_POST['pregunta']);
+			$fecha = date("Y-m-d H:i:s");
+			$pregunta =new  Pregunta(1,$fecha,$p,9999);
+			$estado = PreguntaDAO::agregarAuto($pregunta);
+			$p = PreguntaDAO::buscarNumero(9999);
+			$p->setIsDelete(0);
+			$estado1 = PreguntaDAO::actualizar($p);
+
+			$items = $_POST['items'];
+			foreach ($items as $i) {
+				$n = new Detalle_preg_orien(1,$p->getId_pregunta(),$i);
+				$e = Detalle_preg_orienDAO::agregarAuto($n);
+			}
+			if($e){
+				$_SESSION['mensaje_p']=1;
+				header('Location: ../preguntas.php');
+			}else{
+				$_SESSION['mensaje_p']=-1;
+				header('Location: ../nuevoPregunta.php');
+			} 	
+			
+		}else{
+			$_SESSION['mensaje_p']=-1;
+			header('Location: ../nuevoPregunta.php');
+		}
 	
 	}
 	elseif($opc=="buscar"){

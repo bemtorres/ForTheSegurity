@@ -19,6 +19,16 @@ class PreguntaDAO {
 		$params=self::getParamsAuto($nuevo);
 		return $rs->execute($params);
 	}
+	
+	public static function buscarNumero($n) {
+		$cc=DB::getInstancia();
+		$stSql = "SELECT * FROM pregunta WHERE isDelete=:isDelete";
+		$rs = $cc->db->prepare($stSql);
+		$rs->execute(array('isDelete' => $n));
+		$ba = $rs->fetch();
+		$nuevo = new Pregunta($ba['id_pregunta'],$ba['fecha'],$ba['descripcion'],$ba['isDelete']);
+		return $nuevo; 
+	}
 	public static function buscar($id) {
 		$cc=DB::getInstancia();
 		$stSql = "SELECT * FROM pregunta WHERE id_pregunta=:id_pregunta";

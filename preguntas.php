@@ -7,7 +7,8 @@
     require_once ($rootDir . "/DAO/PreguntaDAO.php");
     require_once ($rootDir . "/DAO/OrientacionDAO.php");
     require_once($rootDir . "/DAO/InstitucionDAO.php");
-	require_once($rootDir . "/DAO/UsuarioDAO.php");
+    require_once($rootDir . "/DAO/UsuarioDAO.php");        
+    require_once($rootDir . "/DAO/Detalle_preg_orienDAO.php");
 
 	$nombreUSuario  ="";
 	$cargo  ="";
@@ -32,7 +33,11 @@
 	}
 
     $preguntas = PreguntaDAO::buscarAll(); 
-
+	$mensaje=0;
+    if(isset($_SESSION['mensaje_p'])){
+       $mensaje = $_SESSION['mensaje_p'];
+       $_SESSION['mensaje_p'] = null;
+    }
   ?>
 <?php require_once('layout.php'); ?>
     
@@ -68,6 +73,7 @@
                                         <thead>
                                             <tr>
                                                 <th>Pregunta</th>
+                                                <th>#</th>
                                                 <th></th>
                                             </tr>
                                         </thead>
@@ -75,40 +81,27 @@
                                             <tr>
                                                 <th>Pregunta</th>
                                                 <th></th>
+                                                <th></th>
                                             </tr>
                                         </tfoot>
                                         <tbody>
                                         <?php  foreach ($preguntas as $i) { 
-                                                $u = PreguntaDAO::buscar($i->getId_pregunta()); ?>
+                                                $u = PreguntaDAO::buscar($i->getId_pregunta());
+                                                $ds = Detalle_preg_orienDAO::buscarAll2($u->getId_pregunta());
+                                                $text = "";
+                                                foreach ($ds as $d) {
+                                                    $df = OrientacionDAO::buscar($d->getId_orientacion());
+                                                    $text .= $df->getDescripcion() . " , ";
+                                                }
+                                               
+
+                                                ?>
                                             <tr>
                                                 <td><?php echo $u->getDescripcion() ?></td>
-                                                
+                                                <td><?php echo $text ?></td>
                                                 <th>
-                                                    <!-- Button trigger modal -->
-                                                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-                                                        <i class="fa fa-edit"></i>
-                                                    </button>
-
-                                                    <!-- Modal -->
-                                                    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                                        <div class="modal-dialog" role="document">
-                                                            <div class="modal-content">
-                                                                <div class="modal-header">
-                                                                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                                        <span aria-hidden="true">&times;</span>
-                                                                    </button>
-                                                                </div>
-                                                                <div class="modal-body">
-                                                                    ...
-                                                                </div>
-                                                                <div class="modal-footer">
-                                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                                                    <button type="button" class="btn btn-primary">Save changes</button>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
+                                                    <a href="gestionPreguntas.php?id=<?php echo $i->getId_pregunta() ?>" class="btn btn-primary"><i class="fa fa-edit"></i></a>
+                                                
                                                 </th>
                                             </tr>
                                             <?php  } ?>
