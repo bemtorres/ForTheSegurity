@@ -100,7 +100,7 @@
                                                 <td><?php echo $u->getDescripcion() ?></td>
                                                 <td><?php echo $text ?></td>
                                                 <th>
-                                                    <a href="gestionPreguntas.php?id=<?php echo $i->getId_pregunta() ?>" class="btn btn-primary"><i class="fa fa-edit"></i></a>
+                                                    <a href="alternativas.php?id=<?php echo $i->getId_pregunta() ?>" class="btn btn-primary"><i class="fa fa-edit"></i></a>
                                                 
                                                 </th>
                                             </tr>

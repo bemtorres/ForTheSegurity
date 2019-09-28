@@ -79,4 +79,20 @@ class AlternativaDAO {
 		$params['activo'] = $nuevo->getActivo();
 		return $params;
 	}
+
+	public static function buscarAll2($id_pregunta) {
+		$cc=DB::getInstancia();
+		$stSql = "SELECT * FROM alternativa WHERE id_pregunta=:id_pregunta";
+		$rs = $cc->db->prepare($stSql);
+		$rs->execute(array('id_pregunta' => $id_pregunta));
+		$c = $rs->fetchAll();
+		$pila = array();
+		foreach ($c as $ba) {
+			$nuevo = new Alternativa($ba['id_alternativa'],$ba['id_pregunta'],$ba['descripcion'],$ba['eliminado'],$ba['activo']);
+			array_push($pila, $nuevo);
+		}
+		return $pila; 
+	}
+
+	
 }
