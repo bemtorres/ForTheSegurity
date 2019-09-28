@@ -4,12 +4,14 @@ class Persona {
 	private $id_usuario; //int(11) MAX 11 Null=NO  
 	private $apellidos; //varchar(100) MAX 100 Null=NO  
 	private $foto; //varchar(100) MAX 100 Null=SI  
+	private $sexo; //int(11) MAX 11 Null=NO  
 
-	function __construct($id_persona,$id_usuario,$apellidos,$foto){
+	function __construct($id_persona,$id_usuario,$apellidos,$foto,$sexo){
 		$this->id_persona=$id_persona;
 		$this->id_usuario=$id_usuario;
 		$this->apellidos=$apellidos;
 		$this->foto=$foto;
+		$this->sexo=$sexo;
 	}
 
 	function getId_persona(){
@@ -28,6 +30,10 @@ class Persona {
 		return $this->foto;
 	}
 
+	function getSexo(){
+		return $this->sexo;
+	}
+
 	function setId_persona($id_persona){
 		$this->id_persona=$id_persona;
 	}
@@ -42,6 +48,10 @@ class Persona {
 
 	function setFoto($foto){
 		$this->foto=$foto;
+	}
+
+	function setSexo($sexo){
+		$this->sexo=$sexo;
 	}
 
 	function __toString(){

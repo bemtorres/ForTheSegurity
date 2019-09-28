@@ -55,7 +55,8 @@ CREATE TABLE persona
     id_persona INT NOT NULL ,
     id_usuario INT NOT NULL ,
     apellidos  VARCHAR (100) NOT NULL ,
-    foto       VARCHAR (100)
+    foto       VARCHAR (100) ,
+    sexo       INT NOT NULL
   ) ;
 ALTER TABLE persona ADD CONSTRAINT persona_PK PRIMARY KEY ( id_persona ) ;
 
@@ -93,17 +94,6 @@ CREATE TABLE usuario
   ) ;
 ALTER TABLE usuario ADD CONSTRAINT usuario_PK PRIMARY KEY ( id_usuario ) ;
 
-ALTER TABLE alternativa ADD CONSTRAINT alter_pregu_FK FOREIGN KEY ( id_pregunta) REFERENCES pregunta ( id_pregunta ) ;
-ALTER TABLE detalle_persona_inst ADD CONSTRAINT deta_pers_inst_inst_FK FOREIGN KEY ( id_institucion ) REFERENCES institucion ( id_institucion ) ;
-ALTER TABLE detalle_preg_orien ADD CONSTRAINT deta_preg_orien_orie_FK FOREIGN KEY ( id_orientacion ) REFERENCES orientacion ( id_orientacion ) ;
-ALTER TABLE detalle_preg_orien ADD CONSTRAINT deta_preg_orien_pre_FK FOREIGN KEY ( id_pregunta ) REFERENCES pregunta ( id_pregunta ) ;
-ALTER TABLE detalle_persona_inst ADD CONSTRAINT detalle_per_inst_pers_FK FOREIGN KEY ( id_persona ) REFERENCES persona ( id_persona ) ;
-ALTER TABLE institucion ADD CONSTRAINT institucion_usuario_FK FOREIGN KEY ( id_usuario ) REFERENCES usuario ( id_usuario ) ;
-ALTER TABLE persona ADD CONSTRAINT persona_usuario_FK FOREIGN KEY ( id_usuario ) REFERENCES usuario ( id_usuario ) ;
-ALTER TABLE respuesta ADD CONSTRAINT respue_alterna_FK FOREIGN KEY ( id_alternativa ) REFERENCES alternativa ( id_alternativa ) ;
-ALTER TABLE respuesta ADD CONSTRAINT respuesta_persona_FK FOREIGN KEY ( id_persona ) REFERENCES persona ( id_persona ) ;
-
-
 
 ALTER TABLE alternativa CHANGE COLUMN `id_alternativa` `id_alternativa` INT(11) NOT NULL AUTO_INCREMENT ;
 ALTER TABLE usuario CHANGE COLUMN `id_usuario` `id_usuario` INT(11) NOT NULL AUTO_INCREMENT ;
@@ -114,6 +104,18 @@ ALTER TABLE orientacion CHANGE COLUMN `id_orientacion` `id_orientacion` INT(11) 
 ALTER TABLE persona CHANGE COLUMN `id_persona` `id_persona` INT(11) NOT NULL AUTO_INCREMENT ;
 ALTER TABLE pregunta CHANGE COLUMN `id_pregunta` `id_pregunta` INT(11) NOT NULL AUTO_INCREMENT ;
 ALTER TABLE institucion CHANGE COLUMN `id_institucion` `id_institucion` INT(11) NOT NULL AUTO_INCREMENT ;
+
+
+
+ALTER TABLE alternativa ADD CONSTRAINT alter_pregu_FK FOREIGN KEY ( id_pregunta) REFERENCES pregunta ( id_pregunta ) ;
+ALTER TABLE detalle_persona_inst ADD CONSTRAINT deta_pers_inst_inst_FK FOREIGN KEY ( id_institucion ) REFERENCES institucion ( id_institucion ) ;
+ALTER TABLE detalle_preg_orien ADD CONSTRAINT deta_preg_orien_orie_FK FOREIGN KEY ( id_orientacion ) REFERENCES orientacion ( id_orientacion ) ;
+ALTER TABLE detalle_preg_orien ADD CONSTRAINT deta_preg_orien_pre_FK FOREIGN KEY ( id_pregunta ) REFERENCES pregunta ( id_pregunta ) ;
+ALTER TABLE detalle_persona_inst ADD CONSTRAINT detalle_per_inst_pers_FK FOREIGN KEY ( id_persona ) REFERENCES persona ( id_persona ) ;
+ALTER TABLE institucion ADD CONSTRAINT institucion_usuario_FK FOREIGN KEY ( id_usuario ) REFERENCES usuario ( id_usuario ) ;
+ALTER TABLE persona ADD CONSTRAINT persona_usuario_FK FOREIGN KEY ( id_usuario ) REFERENCES usuario ( id_usuario ) ;
+ALTER TABLE respuesta ADD CONSTRAINT respue_alterna_FK FOREIGN KEY ( id_alternativa ) REFERENCES alternativa ( id_alternativa ) ;
+ALTER TABLE respuesta ADD CONSTRAINT respuesta_persona_FK FOREIGN KEY ( id_persona ) REFERENCES persona ( id_persona ) ;
 
 
 

@@ -9,7 +9,11 @@
     require_once ($rootDir . "/DAO/UsuarioDAO.php");
 
     $instituciones = InstitucionDAO::buscarAll(); 
-
+    $mensaje=0;
+    if($_SESSION['mensaje_institucion']){
+       $mensaje = $_SESSION['mensaje_institucion'];
+    }
+	
   ?>
 
 <?php require_once('layout.php'); ?>
@@ -31,6 +35,13 @@
                 </div>
                 
                 <div class="row">
+                    <?php if($mensaje==1){ ?>
+                    <div class="col-md-12">
+                        <div class="alert alert-success" role="alert">
+                            Se ha agregado correctamente.
+                        </div>
+                    </div>
+                    <?php } ?>
                     <div class="col-md-12">
                         <div class="card">
                             <div class="card-header">
@@ -62,7 +73,12 @@
                                             <tr>
                                                 <td><?php echo $u->getNombre() ?></td>
                                                 <td><?php echo $u->getCorreo() ?></td>
-                                                <th></th>
+                                                <th>
+                                                    <a href="" class="btn btn-info btn-sm"><i class="fa fa-edit"></i></a>
+                                                    <form action="" method="post">
+                                                        <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></button>
+                                                    </form>
+                                                </th>
                                             </tr>
                                             <?php  } ?>
                                         </tbody>

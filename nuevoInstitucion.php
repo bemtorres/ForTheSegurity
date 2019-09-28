@@ -4,10 +4,11 @@
 		<div class="content">
 				<div class="page-inner">
 					<div class="page-header">
-						<h4 class="page-title">Nueva Pregunta</h4>
+						<h4 class="page-title">Nueva Institución</h4>
 						<ul class="breadcrumbs">
 							<li class="nav-home">
-								<a href="#">
+								<a href="instituciones.php">
+									Todas las Instituciones
 									<i class="flaticon-home"></i>
 								</a>
 							</li>

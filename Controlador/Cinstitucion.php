@@ -41,16 +41,16 @@ if(isset($_POST['opcion'])){
 		$institucion = new Institucion(1,$usu->getId_usuario());
 		$estado = InstitucionDAO::agregarAuto($institucion);
 
-		print_r($usuario);
-		echo "<br>";
-		print_r($institucion);
-		// if($estado){
-		// 	$_SESSION['mensaje_institucion']=1;
-		// 	header('Location: ../instituciones.php');
-		// }else{
-		// 	$_SESSION['mensaje_institucion']=-1;
-		// 	header('Location: ../nuevoInstitucion.php');
-		// } 
+		// print_r($usuario);
+		// echo "<br>";
+		// print_r($institucion);
+		if($estado){
+			$_SESSION['mensaje_institucion']=1;
+			header('Location: ../instituciones.php');
+		}else{
+			$_SESSION['mensaje_institucion']=-1;
+			header('Location: ../nuevoInstitucion.php');
+		} 
 	}
 	elseif($opc=="buscar"){
 
