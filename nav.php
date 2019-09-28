@@ -42,18 +42,8 @@
         <div class="collapse" id="charts1">
             <ul class="nav nav-collapse">
                 <li>
-                    <a href="">
-                        <span class="sub-item">Productos</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="">
-                        <span class="sub-item">Solicitudes</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="">
-                        <span class="sub-item">Recepción</span>
+                    <a href="estadistica.php">
+                        <span class="sub-item">Estadística</span>
                     </a>
                 </li>
             </ul>

@@ -36,8 +36,8 @@ self.addEventListener('install', e => {
 
             return cache.addAll([
                 '/',
-                '/home.html',
-                '/index.html',
+                '/home.php',
+                '/index.php',
                 '/js/app.js'
             ]);
 
@@ -45,7 +45,7 @@ self.addEventListener('install', e => {
         });
 
     const cacheInmutable = caches.open( CACHE_INMUTABLE_NAME )
-            .then( cache => cache.add('/vendor/bootstrap-4.1/bootstrap.min.css'));
+            .then( cache => cache.add('/assets/css/bootstrap.min.css'));
 
 
     e.waitUntil( Promise.all([cacheProm, cacheInmutable]) );

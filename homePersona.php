@@ -47,6 +47,12 @@
 	$alternativas = array();
 	$alternativas = AlternativaDAO::buscarAll2($preg->getId_pregunta());
 
+	$mensaje=0;
+    if(isset($_SESSION['mensaje_respuesta'])){
+       $mensaje = $_SESSION['mensaje_respuesta'];
+       $_SESSION['mensaje_respuesta'] = null;
+    }
+
 ?>
 <?php require_once('layout.php'); ?>
     
@@ -56,6 +62,13 @@
 					<!-- <div class="page-header">
 						<h4 class="page-title">Home</h4>
 					</div> -->
+					<?php if($mensaje==1){ ?>
+                    <div class="col-md-12">
+                        <div class="alert alert-success" role="alert">
+                            Se ha agregado correctamente.
+                        </div>
+                    </div>
+                    <?php } ?>
 					<div class="page-category">
 							<!-- Button trigger modal -->
 							<center>
