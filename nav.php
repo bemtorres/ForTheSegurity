@@ -48,17 +48,12 @@
             <ul class="nav nav-collapse">								
                 <li>
                     <a href="/">
-                        <span class="sub-item">Empleados</span>
+                        <span class="sub-item">Preguntas</span>
                     </a>
                 </li>
                 <li>
                     <a href="">
-                        <span class="sub-item">Odontologos</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="/">
-                        <span class="sub-item">Proveedores</span>
+                        <span class="sub-item">Orientación</span>
                     </a>
                 </li>
             </ul>

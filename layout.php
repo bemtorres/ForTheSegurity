@@ -3,9 +3,9 @@
 <html lang="es">
 <head>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-	<title>ForTheSecurity</title>
+	<title>Fell-U</title>
 	<meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
-	<link rel="icon" href="/assets/img/icono.ico" type="image/x-icon"/>
+	<link rel="icon" href="/assets/img/logoICO.ico" type="image/x-icon"/>
 
 	<!-- Fonts and icons -->
 	<script src="/assets/js/plugin/webfont/webfont.min.js"></script>
@@ -35,8 +35,11 @@
 			<div class="logo-header">
 				
 				<a href="home" class="logo text-white">
-				<!-- <img src="/assets/img/logo1.svg"  alt="navbar brand" class="navbar-brand"> -->
-                <strong>ForThe<em>Security</em></strong>
+				
+				<img src="/assets/img/Fell-U_logo_blanco.png" alt="..." class="avatar-img rounded">
+				
+				<!-- <img src="/assets/img/Fell-U_logo.png" with="100%" alt="navbar brand" class="navbar-brand"> -->
+                <!-- <strong>ForThe<em>Security</em></strong> -->
                     
 				</a>
 				<button class="navbar-toggler sidenav-toggler ml-auto" type="button" data-toggle="collapse" data-target="collapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -262,7 +265,7 @@
 									</li>
 									<li>
 										<a href="/">
-											<span class="link-collapse btn btn-block btn-danger text-white">Salir</span>
+											<span class="link-collapse btn btn-block btn-hackathon-danger text-white">Salir</span>
 										</a>
 									</li>
 								</ul>
