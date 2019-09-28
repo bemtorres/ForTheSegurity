@@ -32,30 +32,11 @@
 						<label for="username" class="placeholder"><b>Username</b></label>
 						<input id="username" name="username" type="text" class="form-control" required>
 					</div>
-					<div class="form-group">
-						<label for="password" class="placeholder"><b>Password</b></label>
-						<a href="#" class="link float-right">Forget Password ?</a>
-						<div class="position-relative">
-							<input id="password" name="password" type="password" class="form-control" required>
-							<div class="show-password">
-								<i class="flaticon-interface"></i>
-							</div>
-						</div>
-					</div>
 					<div class="form-group form-action-d-flex mb-3">
-						<!-- <div class="custom-control custom-checkbox">
-							<input type="checkbox" class="custom-control-input" id="rememberme">
-							<label class="custom-control-label m-0" for="rememberme">Remember Me</label>
-						</div> -->
+					
 						<button type="submit" class="btn btn-primary col-md-5 float-right mt-3 mt-sm-0 fw-bold">Ingresar</button>
 					</div>
-					<!-- 				<div class="form-action">
-						<a href="#" class="btn btn-primary btn-rounded btn-login">Sign In</a>
-					</div> -->
-					<!-- <div class="login-account">
-						<span class="msg">Don't have an account yet ?</span>
-						<a href="#" id="show-signup" class="link">Sign Up</a>
-					</div> -->
+				
 				</div>
 			</form>
 		
@@ -66,7 +47,7 @@
 	<script src="/assets/js/core/popper.min.js"></script>
 	<script src="/assets/js/core/bootstrap.min.js"></script>
 	<script src="/assets/js/ready.js"></script>
-	<script src="js/main.js"></script>
+	<script src="js/app.js"></script>
 
 </body>
 </html>
